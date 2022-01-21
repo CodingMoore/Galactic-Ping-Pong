@@ -2,7 +2,12 @@
 
 // UI Logic
 $(function() {
-  alert("Test");
+
+
+
+  ///////////////////
+  ///panzoom logic///
+  ///////////////////
   const element = document.getElementById("mapWrapper");
   const panzoom = Panzoom(element, {
   // options here
@@ -12,7 +17,5 @@ $(function() {
   // enable mouse wheel
   const parent = element.parentElement;
   parent.addEventListener('wheel', panzoom.zoomWithWheel);
-  console.log(element);
-  console.log(panzoom);
-  console.log(parent);
+
 });
