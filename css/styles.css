@@ -3,3 +3,39 @@
   background-image: url('assets/GS-Galactic-PingPong-v1.svg');
   background-repeat: no-repeat;
 } */
+
+.jumbotron {
+  text-align: center;
+  padding: 1em
+}
+
+#jumbotronText {
+  font-size: 20pt;
+}
+
+#linksDiv {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#gsGalleryAnchor,
+#mpStudioAnchor {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#gsGalleryLink, 
+#mpStudioLink {
+  max-width: 90%;
+  max-height: auto;
+}
+
+#gsMapBackground,
+#mpMapBackground {
+  background-color: aquamarine;
+  border-style: solid;
+  border-color: black;
+  padding: 1em;
+}
