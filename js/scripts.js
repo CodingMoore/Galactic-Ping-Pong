@@ -10,7 +10,7 @@ $(function() {
   ///////////////////
 
   //GS-Gallery panzoom
-  const element = document.getElementById("gsMapWrapper");
+  const element = document.getElementById("gsSvgMapWrapper");
   const panzoom = Panzoom(element, {
   // options here
   maxScale: 2,
@@ -22,7 +22,7 @@ $(function() {
 
 
   //PM-Studio panzoom
-  const element2 = document.getElementById("pmMapWrapper");
+  const element2 = document.getElementById("pmSvgMapWrapper");
   const panzoom2 = Panzoom(element2, {
   // options here
   maxScale: 2,
