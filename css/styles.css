@@ -39,3 +39,13 @@
   border-color: black;
   padding: 1em;
 }
+
+#gsSvgMap {
+  background: url('../assets/GS-Galactic-PingPong-v1.svg');
+  background-repeat: no-repeat;
+}
+
+#mpSvgMap {
+  background: url('../assets/GS-Galactic-PingPong-v1.svg');
+  background-repeat: no-repeat;
+}
