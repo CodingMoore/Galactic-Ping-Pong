@@ -14,8 +14,7 @@ $(function() {
   const panzoom = Panzoom(element, {
   // options here
   maxScale: 2,
-  minScale:  1,
-  pinchSpeed: 10 
+  minScale:  1
   });
   // enable mouse wheel
   const parent = element.parentElement;
