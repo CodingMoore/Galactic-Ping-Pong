@@ -35,20 +35,39 @@ $(function() {
   // enable mouse wheel
   const parent2 = element2.parentElement;
   parent2.addEventListener('wheel', panzoom2.zoomWithWheel);
-
-
+  
+  
   /////////////////////////
-  ///Scroll to Div Logic///
+  ///Div Hide/Show Logic///
   /////////////////////////
-  $('a[href*=\\#]:not([href=\\#])').on('click', function() {
-    var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
-    if (target.length) {
-        $('html,body').animate({
-            scrollTop: target.offset().top
-        }, 1000);
-        return false;
-    }
-});
+  
+  $("#gsGalleryAnchor").click(function() {
+    $("#mpDiv").hide();
+    $("#gsDiv").show();
+    $("#mpStudioLink").css("border-color", "black");
+    $("#gsGalleryLink").css("border-color", "blue");
+  });
+  
+  $("#mpStudioAnchor").click(function() {
+    $("#gsDiv").hide();
+    $("#mpDiv").show();
+    $("#gsGalleryLink").css("border-color", "black");
+    $("#mpStudioLink").css("border-color", "blue");
+  });
+  
+  
+    /////////////////////////
+    ///Scroll to Div Logic///
+    /////////////////////////
+    $('a[href*=\\#]:not([href=\\#])').on('click', function() {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+      if (target.length) {
+          $('html,body').animate({
+              scrollTop: target.offset().top
+          }, 1000);
+          return false;
+      }
+    });
 
 });
