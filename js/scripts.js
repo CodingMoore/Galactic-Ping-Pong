@@ -14,8 +14,12 @@ $(function() {
   const panzoom = Panzoom(element, {
   // options here
   maxScale: 2,
-  minScale:  1
+  minScale: 1
   });
+
+  // first value is starting zoom level
+  panzoom.zoom(1, { animate: true })
+
   // enable mouse wheel
   const parent = element.parentElement;
   parent.addEventListener('wheel', panzoom.zoomWithWheel);
