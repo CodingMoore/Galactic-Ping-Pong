@@ -1,4 +1,4 @@
-# **Gallery-Map**
+# **Galactic-Ping-Pong**
 Project Initiated: 2022-01-17<br/>
 Updated: 2022-01-17
 
