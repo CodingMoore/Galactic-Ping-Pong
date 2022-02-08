@@ -4,10 +4,22 @@
 $(function() {
 
 
+  // ////////////////////////////
+  // ///panzoom logic (anvaka)///
+  // ////////////////////////////
 
-  ///////////////////
-  ///panzoom logic///
-  ///////////////////
+  // const element = document.getElementById("gsSvgMapWrapper");
+  // panzoom(element, {
+  //   zoomSpeed: .2,
+  //   bounds: true,
+  //   boundsPadding: .8
+  // });
+
+
+
+  ///////////////////////////
+  ///panzoom logic (timmy)///
+  ///////////////////////////
 
   //GS-Gallery panzoom
   const element = document.getElementById("gsSvgMapWrapper");
