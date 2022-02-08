@@ -27,6 +27,7 @@ $(function() {
   // options here
   maxScale: 2,
   minScale: 1
+  // ,contain: "outside"
   });
 
   // first value is starting zoom level
@@ -42,8 +43,10 @@ $(function() {
   const panzoom2 = Panzoom(element2, {
   // options here
   maxScale: 2,
-  minScale:  1
+  minScale: 1
+  // ,contain: "outside"
   });
+  
   // enable mouse wheel
   const parent2 = element2.parentElement;
   parent2.addEventListener('wheel', panzoom2.zoomWithWheel);
