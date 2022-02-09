@@ -39,9 +39,21 @@
   padding: 1em;
 }
 
+#gsSvgMapWrapper,
+#mpSvgMapWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #gsSvgMap {
   background: url('../assets/GS-Galactic-PingPong-v1.svg');
   background-repeat: no-repeat;
+  
+  /* used to view the size/shape of the svg */
+  border-style: dashed;
+  border-color: red;
+  border-width: 5;
 }
 
 #mpSvgMap {
