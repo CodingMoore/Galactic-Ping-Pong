@@ -1,9 +1,20 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+#maxWidthDiv {
+  max-width: 1200px;
+  /* display: flex;
+  justify-content: center; */
+}
 
 .decorativeLine {
   border-style: solid;
   border-color: black;
   border-width: 20pt 20pt 0 20pt;
-  margin: 10pt 10pt 0pt 10pt;
+  margin: 5pt 5pt 0pt 5pt;
   padding: 10pt 10pt 0pt 10pt;
 }
 
@@ -23,11 +34,27 @@
 
 .jumbotron {
   text-align: center;
-  padding: 1em
+  padding: 1em;
 }
 
 #jumbotronText {
   font-size: 5em;
+}
+
+#titleDiv {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  margin: 0 40pt;
+  padding: 10pt 0;
+  position: relative;
+  bottom: 110pt;
+}
+
+#titleDivText {
+  font-size: 80px;
+  font-weight:1000;
+  color: rgb(134, 134, 134);
 }
 
 #roomSelectionDiv {
@@ -51,6 +78,16 @@
   border-color: black;
   border-radius: 20pt;
   border-width: .2rem;
+}
+
+.locationDivText {
+  display: flex;
+  justify-content: center;
+  font-size: 30pt;
+  font-weight: 1000;
+  color:rgb(92, 92, 92);
+  margin-top: 20pt;
+
 }
 
 #gsSvgOutsideContainer,

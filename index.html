@@ -13,19 +13,23 @@
   <title>Gallery Map</title>
 </head>
 <body>
-  <div class="container" id="bodyContainer">
+  <!-- <div class="container" id="bodyContainer"> -->
+  <div id="maxWidthDiv"> 
     <div class="decorativeLine" id="outerLine">
       <div class="decorativeLine" id="centralLine">
         <div class="decorativeLine" id="innerLine">
-          <div class="jumbotron">
+          <!-- <div class="jumbotron">
             <span id="jumbotronText">Galactic Ping Pong</span>
+          </div> -->
+          <div id="titleDiv">
+            <span id="titleDivText">Galactic Ping Pong</span>
           </div>
           <div id="roomSelectionDiv">
             <a id="gsGalleryAnchor" href="#gsDiv"><img id="gsGalleryLink" src="./assets/IMG_20190922_201240.jpg" /></a>
             <a id="mpStudioAnchor" href="#mpDiv"><img id="mpStudioLink" src="./assets/IMG_20190922_201240-02.jpeg" /></a>
           </div>
           <div id="gsDiv"  style="display: hidden">
-            <div id="gsGalleryTextDiv">
+            <div class="locationDivText" id="gsGalleryTextDiv">
               Gretchen Schuette Gallery
             </div>
             <div id="gsSvgOutsideContainer">
@@ -75,7 +79,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
+  <!-- </div> -->
   <div id="footer">
     <div class="container" id="footerGridContainer">
       <a class="gridItems" id="websiteLink" href="https://kmoostudios.com">kmoostudios</a>
