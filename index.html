@@ -14,57 +14,72 @@
 </head>
 <body>
   <div class="container" id="bodyContainer">
-    <div class="jumbotron">
-      <span id="jumbotronText">Galactic Ping Pong</span>
-    </div>
-    <div id="roomSelectionDiv">
-      <a id="gsGalleryAnchor" href="#gsDiv"><img id="gsGalleryLink" src="./assets/IMG_20190922_201240.jpg" /></a>
-      <a id="mpStudioAnchor" href="#mpDiv"><img id="mpStudioLink" src="./assets/IMG_20190922_201240-02.jpeg" /></a>
-    </div>
-    <div id="gsDiv"  style="display: hidden">
-      <div id="gsGalleryTextDiv">
-        Gretchen Schuette Gallery
-      </div>
-      <div id="gsSvgOutsideContainer">
-        <div id="gsSvgMapWrapper">
+    <div class="decorativeLine" id="outerLine">
+      <div class="decorativeLine" id="centralLine">
+        <div class="decorativeLine" id="innerLine">
+          <div class="jumbotron">
+            <span id="jumbotronText">Galactic Ping Pong</span>
+          </div>
+          <div id="roomSelectionDiv">
+            <a id="gsGalleryAnchor" href="#gsDiv"><img id="gsGalleryLink" src="./assets/IMG_20190922_201240.jpg" /></a>
+            <a id="mpStudioAnchor" href="#mpDiv"><img id="mpStudioLink" src="./assets/IMG_20190922_201240-02.jpeg" /></a>
+          </div>
+          <div id="gsDiv"  style="display: hidden">
+            <div id="gsGalleryTextDiv">
+              Gretchen Schuette Gallery
+            </div>
+            <div id="gsSvgOutsideContainer">
+              <div id="gsSvgMapWrapper">
 
-          <!-- The width and height values control how big it appears on the page. ex. - width of 600 it twice as big on the page as a width of 300. -->
+                <!-- The width and height values control how big it appears on the page. ex. - width of 600 it twice as big on the page as a width of 300. -->
 
-          <!-- The width and height ratio control the shape of container around the background image.  The ratio should match that of the background images h/w ratio, so that things look centered when 'justify-content: center' and 'align-items: center' are used.-->
-          
-          <!-- The viewBox max-X and max-Y values relate to the placement of the shapes (circles) inside the svg. The total values of the viewbox max-X and max-Y don't really matter so long as the circle placement stay within them. If you keep the ratio of max-X and max-Y values to the circles cx and cy values constant, you won't see a change in their relative placement on the background-->
+                <!-- The width and height ratio control the shape of container around the background image.  The ratio should match that of the background images h/w ratio, so that things look centered when 'justify-content: center' and 'align-items: center' are used.-->
+                
+                <!-- The viewBox max-X and max-Y values relate to the placement of the shapes (circles) inside the svg. The total values of the viewbox max-X and max-Y don't really matter so long as the circle placement stay within them. If you keep the ratio of max-X and max-Y values to the circles cx and cy values constant, you won't see a change in their relative placement on the background-->
 
-          <svg id="gsSvgMap" width="600" height="504" viewBox="0 0 300 300" transform-origin="0 0">
+                <svg id="gsSvgMap" width="600" height="504" viewBox="0 0 300 300" transform-origin="0 0">
 
-            <!-- Example plate representations -->
-            <a href="./plates/8219.html" target="_blank"><circle cx="40" cy="100" r="14" stroke="green" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="100" cy="250" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="200" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="229" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="225" cy="214.5" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="275" cy="100" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-          </svg>
+                  <!-- Example plate representations -->
+                  <a href="./plates/8219.html" target="_blank"><circle cx="40" cy="100" r="14" stroke="green" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="100" cy="250" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="200" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="229" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="225" cy="214.5" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="275" cy="100" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                </svg>
+              </div>
+            </div>
+            <button id="resetPanZoomButton">Reset</button>
+          </div>
+          <div id="mpDiv" style="display: none">
+            <div id="mpStudioTextDiv">
+              Media Production Studio
+            </div>
+            <div id="mpSvgOutsideContainer">
+              <div id="pmSvgMapWrapper">
+                <svg id="mpSvgMap" width="100" height="100" viewBox="0 0 400 400" transform-origin="0 0">
+
+                  <!-- Example plate representations -->
+                  <a href="./plates/8219.html" target="_blank"><circle cx="40" cy="100" r="14" stroke="green" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="150" cy="300" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="200" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="229" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="225" cy="214.5" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                  <a href="./plates/8219.html" target="_blank"><circle cx="375" cy="100" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div id="bottomDiv">
+          </div>
         </div>
       </div>
     </div>
-    <div id="mpDiv" style="display: none">
-      <div id="mpStudioTextDiv">
-        Media Production Studio
-      </div>
-      <div id="mpSvgOutsideContainer">
-        <div id="pmSvgMapWrapper">
-          <svg id="mpSvgMap" width="100" height="100" viewBox="0 0 400 400" transform-origin="0 0">
-
-            <!-- Example plate representations -->
-            <a href="./plates/8219.html" target="_blank"><circle cx="40" cy="100" r="14" stroke="green" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="150" cy="300" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="200" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="229" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="225" cy="214.5" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-            <a href="./plates/8219.html" target="_blank"><circle cx="375" cy="100" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-          </svg>
-        </div>
-      </div>
+  </div>
+  <div id="footer">
+    <div class="container" id="footerGridContainer">
+      <a class="gridItems" id="websiteLink" href="https://kmoostudios.com">kmoostudios</a>
+      <span class="gridItems" id="copyright">© 2022 Kathryn Cellerini</span>
     </div>
   </div>
 </body>

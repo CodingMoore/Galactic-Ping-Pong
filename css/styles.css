@@ -1,11 +1,33 @@
 
+.decorativeLine {
+  border-style: solid;
+  border-color: black;
+  border-width: 20pt 20pt 0 20pt;
+  margin: 10pt 10pt 0pt 10pt;
+  padding: 10pt 10pt 0pt 10pt;
+}
+
+#outerLine {
+  border-radius: 20pt;
+  border-color: rgb(134, 134, 134);
+}
+
+#centralLine {
+  border-radius: 10pt;
+  border-color: rgb(92, 92, 92);
+}
+
+#innerLine {
+  border-color: rgb(46, 46, 46);
+}
+
 .jumbotron {
   text-align: center;
   padding: 1em
 }
 
 #jumbotronText {
-  font-size: 20pt;
+  font-size: 5em;
 }
 
 #roomSelectionDiv {
@@ -59,4 +81,42 @@
 #mpSvgMap {
   background: url('../assets/GS-Galactic-PingPong-v1.svg');
   background-repeat: no-repeat;
+}
+
+#resetPanZoomButton {
+  position: relative;
+  bottom: 2.5rem;
+  left: 1rem;
+}
+
+#bottomDiv {
+  padding-bottom: 5rem;
+}
+
+#footer {
+  background-color: cadetblue;
+  padding: 1rem 0 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  /* margin: 2rem 0; */
+}
+
+#footerGridContainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-gap: 1rem;
+}
+
+.gridItems {
+  display: flex;
+  justify-content: center;
+}
+
+#websiteLink {
+  color:darkgreen
+}
+
+#copyright {
+  grid-column-start: 7;
 }
