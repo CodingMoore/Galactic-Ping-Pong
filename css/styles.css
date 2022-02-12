@@ -117,6 +117,7 @@ body {
 #gsSvgMap {
   background: url('../assets/GS-Galactic-PingPong-v1.svg');
   background-repeat: no-repeat;
+  aspect-ratio: 600/504;
   
   /* used to view the size/shape of the svg */
   border-style: dashed;
