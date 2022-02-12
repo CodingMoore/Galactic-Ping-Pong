@@ -37,11 +37,15 @@
             <div id="gsSvgOutsideContainer">
               <div id="gsSvgMapWrapper">
 
-                <!-- The width and height values control how big it appears on the page. ex. - width of 600 it twice as big on the page as a width of 300. -->
+                <!-- SVG (#gsSvgmap) size and scaling info! -->
 
-                <!-- The width and height ratio control the shape of container around the background image.  The ratio should match that of the background images h/w ratio, so that things look centered when 'justify-content: center' and 'align-items: center' are used.-->
+                <!-- The width and height values control how big it appears on the page. ex. - width of 600 it twice as big on the page as a width of 300. The height value is set to 'auto' because the aspect ratio is being held constant by the 'aspect-ratio: 600/500' in the CSS file -->
+
+                <!-- The width and height ratio control the shape of container around the background image.  The ratio should match that of the background images h/w ratio, so that things look centered when 'display: flex', 'justify-content: center' and 'align-items: center' are used in the svg's parent Div.-->
                 
                 <!-- The viewBox max-X and max-Y values relate to the placement of the shapes (circles) inside the svg. The total values of the viewbox max-X and max-Y don't really matter so long as the circle placement stay within them. If you keep the ratio of max-X and max-Y values to the circles cx and cy values constant, you won't see a change in their relative placement on the background-->
+
+                <!-- To keep the circles placed correctly over the background image when the height of the div become greater than the width (due to small screen sizes), 'preserveAspectRatio="xMidYMin meet" x="0" y="0"' is used. -->
 
                 <svg id="gsSvgMap" width="600" height="auto" viewBox="0 0 300 300" transform-origin="0 0" preserveAspectRatio="xMidYMin meet" x="0" y="0">
 
