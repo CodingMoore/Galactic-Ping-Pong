@@ -4,6 +4,11 @@ body {
   justify-content: center;
 }
 
+#bodyContainer {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 #maxWidthDiv {
   max-width: 1200px;
   /* display: flex;
@@ -21,6 +26,9 @@ body {
 #outerLine {
   border-radius: 20pt;
   border-color: rgb(134, 134, 134);
+  margin-top: 10px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #centralLine {
@@ -45,6 +53,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: black;
+  min-height: 150px;
   margin: 0 40pt;
   padding: 10pt 0;
   position: relative;
@@ -52,7 +61,7 @@ body {
 }
 
 #titleDivText {
-  font-size: 80px;
+  font-size: 68px;
   font-weight:1000;
   color: rgb(134, 134, 134);
 }
