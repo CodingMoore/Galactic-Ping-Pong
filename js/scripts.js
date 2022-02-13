@@ -56,6 +56,8 @@ $(function() {
   ///Div Hide/Show Logic///
   /////////////////////////
   
+  $("#gsGalleryLink").css("border-color", "blue");
+
   $("#gsGalleryAnchor").click(function() {
     $("#mpDiv").hide();
     $("#gsDiv").show();

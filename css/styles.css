@@ -9,6 +9,7 @@ body {
   padding-right: 0;
 }
 
+/*Alternative to using bodyContainer, which is a bootstrap .Container class.*/
 #maxWidthDiv {
   max-width: 1200px;
   /* display: flex;
@@ -120,9 +121,9 @@ body {
   aspect-ratio: 600/504;
   
   /* used to view the size/shape of the svg */
-  border-style: dashed;
+  /* border-style: dashed;
   border-color: red;
-  border-width: 5;
+  border-width: 5; */
 }
 
 #mpSvgMap {
