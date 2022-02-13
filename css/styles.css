@@ -4,41 +4,48 @@ body {
   justify-content: center;
 }
 
-#bodyContainer {
+/* Used with bootstrap .container class */
+/* #bodyContainer {
   padding-left: 0;
   padding-right: 0;
-}
+} */
 
 /*Alternative to using bodyContainer, which is a bootstrap .Container class.*/
 #maxWidthDiv {
+  width: 100%;
   max-width: 1200px;
-  /* display: flex;
-  justify-content: center; */
 }
 
 .decorativeLine {
   border-style: solid;
   border-color: black;
-  border-width: 20pt 20pt 0 20pt;
-  margin: 5pt 5pt 0pt 5pt;
-  padding: 10pt 10pt 0pt 10pt;
+  /* border-width: 20pt 20pt 0 20pt; */
+  border-width: min(3.5vw, 20pt) min(3.5vw, 20pt) 0 min(3.5vw, 20pt);
+  /* margin: 5pt 5pt 0pt 5pt; */
+  margin: min(.875vw, 5pt) min(.875vw, 5pt) 0 min(.875vw, 5pt);
+  /* padding: 10pt 10pt 0pt 10pt; */
+  padding: min(1.75vw, 10pt) min(1.75vw, 10pt) 0 min(1.75vw, 10pt);
 }
 
 #outerLine {
-  border-radius: 20pt;
+  /* border-radius: 20pt; */
+  border-radius: min(3.5vw, 20pt);
   border-color: rgb(134, 134, 134);
-  margin-top: 10px;
-  margin-left: 0;
-  margin-right: 0;
+  /* margin-top: 10px; */
+  margin-top: min(1.29vw, 10px);
+  /* margin-left: 0;
+  margin-right: 0; */
 }
 
 #centralLine {
-  border-radius: 10pt;
+  /* border-radius: 10pt; */
+  border-radius: min(1.75vw, 10pt);
   border-color: rgb(92, 92, 92);
 }
 
 #innerLine {
-  padding: 0 40px;
+  /* padding: 0 40px; */
+  padding: 0 min(5.16vw, 40px);
   border-color: rgb(46, 46, 46);
 
   /* Used for having the dashed line go the full length of the page */
@@ -63,16 +70,26 @@ body {
 #titleDiv {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: black;
-  min-height: 150px;
-  margin: 0 40pt;
-  padding: 10pt 0;
+  /* min-height: 150px; */
+  height: min(18vw, 130px);
+  width: min(50vw, 400px);
+  /* margin: 0 40pt; */
+  /* margin: 0 min(7vw, 40pt); */
+  /* padding: 10pt 0; */
+  /* padding: min(1.75vw, 10pt) 0; */
   position: relative;
-  bottom: 95pt;
+  /* bottom: 95pt; */
+  bottom: min(17vw, 95pt);
 }
 
 #titleDivText {
-  font-size: 68px;
+  /* margin: 0 6vw; */
+  white-space: nowrap;
+  /* font-size: 68px; */
+  font-size: min(5.5vw, 68px);
+  /* font-size: 5vw; */
   font-weight:1000;
   color: rgb(134, 134, 134);
 }
@@ -86,6 +103,8 @@ body {
   background-image: url('../assets/DashedVerticalLineV3.svg');
   background-position-x: center;
   background-position-y: top;
+
+  /* Keeps the same number of dashes when scaled */
   background-size: cover;
   max-width: 100%;
 }
