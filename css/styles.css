@@ -40,18 +40,24 @@ body {
 #innerLine {
   padding: 0 40px;
   border-color: rgb(46, 46, 46);
-  background-image: url('../assets/DashedVerticalLineV2.png');
+
+  /* Used for having the dashed line go the full length of the page */
+  /* background-image: url('../assets/DashedVerticalLineV2.png');
   background-position-x: center;
-  background-position-y: top;
+  background-position-y: top; */
 }
 
-.jumbotron {
+/* .jumbotron {
   text-align: center;
   padding: 1em;
 }
 
 #jumbotronText {
   font-size: 5em;
+} */
+
+#titleDivWrapper {
+  height: 0;
 }
 
 #titleDiv {
@@ -62,7 +68,7 @@ body {
   margin: 0 40pt;
   padding: 10pt 0;
   position: relative;
-  bottom: 110pt;
+  bottom: 95pt;
 }
 
 #titleDivText {
@@ -75,6 +81,11 @@ body {
   display: flex;
   align-content: center;
   justify-content: center;
+  margin-top: 40px;
+  padding: 40px 0;
+  background-image: url('../assets/DashedVerticalLineV2.png');
+  background-position-x: center;
+  background-position-y: top;
 }
 
 /* .roomSelectionAnchor {
@@ -107,8 +118,9 @@ body {
   justify-content: center;
   font-size: 30pt;
   font-weight: 1000;
-  color:rgb(92, 92, 92);
-  margin-top: 20pt;
+  color:rgb(134, 134, 134);
+  margin-top: 35px;
+  padding-bottom: 10px;
   background-color: black;
 }
 
