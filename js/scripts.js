@@ -39,7 +39,7 @@ $(function() {
 
 
   //PM-Studio panzoom
-  const element2 = document.getElementById("pmSvgMapWrapper");
+  const element2 = document.getElementById("mpSvgMapWrapper");
   const panzoom2 = Panzoom(element2, {
   // options here
   maxScale: 2,
@@ -90,8 +90,12 @@ $(function() {
   /////////////////////////
   ///Reset Panzoom Logic///
   /////////////////////////
-  $("#resetPanZoomButton").click(function() {
+  $("#gsResetPanZoomButton").click(function() {
     panzoom.reset();
+  });
+
+  $("#mpResetPanZoomButton").click(function() {
+    panzoom2.reset();
   });
 
 });

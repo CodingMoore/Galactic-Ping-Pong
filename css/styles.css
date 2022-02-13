@@ -140,10 +140,22 @@ body {
   background-repeat: no-repeat;
 }
 
-#resetPanZoomButton {
+.resetPanZoomButtonDiv {
+  height: 0;
+}
+
+#gsResetPanZoomButton {
   position: relative;
-  bottom: 2.5rem;
-  left: 1rem;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+}
+
+#mpResetPanZoomButton {
+  position: relative;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
 }
 
 #bottomDiv {
