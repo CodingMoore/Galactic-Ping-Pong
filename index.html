@@ -27,15 +27,19 @@
             <span id="titleDivText">Galactic Ping Pong</span>
           </div>
           <div id="roomSelectionDiv">
-            <a id="gsGalleryAnchor" href="#gsDiv"><img id="gsGalleryLink" src="./assets/IMG_20190922_201240.jpg" /></a>
-            <a id="mpStudioAnchor" href="#mpDiv"><img id="mpStudioLink" src="./assets/IMG_20190922_201240-02.jpeg" /></a>
+            <a id="gsGalleryAnchor" class="roomSelectionAnchor" href="#gsDiv">
+              <img id="gsGalleryLink" class="roomSelectionLink" src="./assets/IMG_20190922_201240.jpg" />
+            </a>
+            <a id="mpStudioAnchor" class="roomSelectionAnchor" href="#mpDiv">
+              <img id="mpStudioLink" class="roomSelectionLink" src="./assets/IMG_20190922_201240-02.jpeg" />
+            </a>
           </div>
           <div id="gsDiv"  style="display: hidden">
             <div class="locationDivText" id="gsGalleryTextDiv">
               Gretchen Schuette Gallery
             </div>
-            <div id="gsSvgOutsideContainer">
-              <div id="gsSvgMapWrapper">
+            <div id="gsSvgOutsideContainer" class="svgOutsideContainer">
+              <div id="gsSvgMapWrapper" class="svgMapWrapper">
 
                 <!-- SVG (#gsSvgmap) size and scaling info! -->
 
@@ -65,8 +69,8 @@
             <div id="mpStudioTextDiv">
               Media Production Studio
             </div>
-            <div id="mpSvgOutsideContainer">
-              <div id="pmSvgMapWrapper">
+            <div id="mpSvgOutsideContainer" class="svgOutsideContainer">
+              <div id="pmSvgMapWrapper" class="svgMapWrapper">
                 <svg id="mpSvgMap" width="100" height="100" viewBox="0 0 400 400" transform-origin="0 0">
 
                   <!-- Example plate representations -->
