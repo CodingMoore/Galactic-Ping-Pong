@@ -1,3 +1,4 @@
+
 body {
   background-color: black;
   display: flex;
@@ -10,6 +11,7 @@ body {
 }
 
 /*Alternative to using bodyContainer, which is a bootstrap .Container class.*/
+
 #maxWidthDiv {
   max-width: 1200px;
   /* display: flex;
@@ -18,10 +20,17 @@ body {
 
 .decorativeLine {
   border-style: solid;
-  border-color: black;
   border-width: 20pt 20pt 0 20pt;
   margin: 5pt 5pt 0pt 5pt;
   padding: 10pt 10pt 0pt 10pt;
+}
+@media (max-width: 599px) {  
+  .decorativeLine {
+    /* border-style: solid; */
+    border-width: 10px 10px 0 10px;
+    margin: 4px 4px 0 4px;
+    padding: 4px 4px 0pt 4px;
+  }
 }
 
 #outerLine {
@@ -31,10 +40,25 @@ body {
   margin-left: 0;
   margin-right: 0;
 }
+@media (max-width: 599px) {  
+  #outerLine {
+    border-radius: 20px;
+    /* border-color: rgb(134, 134, 134); */
+    /* margin-top: 10px; */
+    /* margin-left: 0;
+    margin-right: 0; */
+  }
+}
 
 #centralLine {
   border-radius: 10pt;
   border-color: rgb(92, 92, 92);
+}
+@media (max-width: 599px) {
+  #centralLine {
+    border-radius: 10px;
+    /* border-color: rgb(92, 92, 92); */
+  }
 }
 
 #innerLine {
@@ -45,6 +69,12 @@ body {
   /* background-image: url('../assets/DashedVerticalLineV2.png');
   background-position-x: center;
   background-position-y: top; */
+}
+@media (max-width: 599px) {
+  #innerLine {
+    padding: 0 15px;
+    /* border-color: rgb(46, 46, 46); */
+  }
 }
 
 /* .jumbotron {
@@ -63,18 +93,53 @@ body {
 #titleDiv {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: black;
-  min-height: 150px;
   margin: 0 40pt;
-  padding: 10pt 0;
   position: relative;
   bottom: 95pt;
 }
+@media (max-width: 599px) {
+  #titleDiv {
+    height: 50px;
+    margin: 0 40px;
+    bottom: 50px;
+  }
+}
+@media (max-width: 360px) {
+  #titleDiv {
+    height: 50px;
+    margin: 0 20px;
+    bottom: 50px;
+  }
+}
 
-#titleDivText {
+.titleDivText {
+  text-align: center;
   font-size: 68px;
   font-weight:1000;
   color: rgb(134, 134, 134);
+}
+@media (max-width: 599px) {
+  .titleDivText {
+    font-size: 30px;
+    padding: 0 10px;
+    line-height: 110%;
+  }
+}
+@media (max-width: 499px) {
+  .titleDivText {
+    font-size: 25px;
+    line-height: 110%;
+    padding: 0 5px;
+  }
+}
+@media (max-width: 399px) {
+  .titleDivText {
+    line-height: 110%;
+    padding: 0 5px;
+    max-width: 150px;
+  }
 }
 
 #roomSelectionDiv {
@@ -88,6 +153,12 @@ body {
   background-position-y: top;
   background-size: cover;
   max-width: 100%;
+}
+@media (max-width: 599px) {
+  #roomSelectionDiv {
+    margin-top: 25px;
+    padding: 8px 0;
+  }
 }
 
 /* .roomSelectionAnchor {
@@ -114,16 +185,35 @@ body {
   border-radius: 20pt;
   border-width: .2rem;
 }
+@media (max-width: 599px) {
+  .roomSelectionLink {
+    border-radius: 20px;
+    border-width: 3px;
+  }
+}  
 
 .locationDivText {
   display: flex;
   justify-content: center;
+  text-align: center;
   font-size: 30pt;
   font-weight: 1000;
   color:rgb(134, 134, 134);
   margin-top: 35px;
   padding-bottom: 10px;
   background-color: black;
+}
+@media (max-width: 599px) {
+  .locationDivText {
+    font-size: 28px;
+    margin-top: 15px;
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 499px) {
+  .locationDivText {
+    font-size: 20px;
+  } 
 }
 
 .svgOutsideContainer {
@@ -133,6 +223,21 @@ body {
   border-style: solid;
   border-color: black;
   padding: 1em;
+}
+@media (max-width: 599px) {
+  .svgOutsideContainer {
+    padding: 40px
+  }
+}
+@media (max-width: 499px) {
+  .svgOutsideContainer {
+    padding: 30px
+  }
+}
+@media (max-width: 399px) {
+  .svgOutsideContainer {
+    padding: 20px
+  }
 }
 
 .svgMapWrapper {
@@ -169,6 +274,28 @@ body {
   /* To keep the botton on top of the map */
   z-index: 1;
 }
+@media (max-width: 599px) {
+  #gsResetPanZoomButton {
+    padding: 5px;
+    line-height: 100%;
+    top: 6px;
+    left: 6px;
+  }
+}
+@media (max-width: 499px) {
+  #gsResetPanZoomButton {
+    padding: 5px;
+    top: 4px;
+    left: 4px;
+  }
+}  
+@media (max-width: 399px) {
+  #gsResetPanZoomButton {
+    padding: 3px;
+    top: 2px;
+    left: 2px;
+  }
+}  
 
 #mpResetPanZoomButton {
   position: relative;
@@ -178,6 +305,28 @@ body {
   /* To keep the botton on top of the map */
   z-index: 1;
 }
+@media (max-width: 599px) {
+  #mpResetPanZoomButton {
+    padding: 5px;
+    line-height: 100%;
+    top: 6px;
+    left: 6px;
+  }
+}
+@media (max-width: 499px) {
+  #mpResetPanZoomButton {
+    padding: 5px;
+    top: 4px;
+    left: 4px;
+  }
+}  
+@media (max-width: 399px) {
+  #mpResetPanZoomButton {
+    padding: 3px;
+    top: 2px;
+    left: 2px;
+  }
+}  
 
 /* .textBackground {
   background-color: black;
@@ -186,11 +335,16 @@ body {
 
 #artistStatementTitle {
   display: inline-flex;
-  padding-right: 20px;
   color:antiquewhite;
   background: rgba(0,0,0,0.6);
   font-size: 30px;
   margin-top: 30px;
+}
+@media (max-width: 599px) {
+  #artistStatementTitle {
+    font-size: 25px;
+    margin-top: 15px;
+  }
 }
 
 #artistStatementText {
@@ -201,11 +355,16 @@ body {
 
 #specialThanksTitle {
   display: inline-flex;
-  padding-right: 20px;
   color:antiquewhite;
   background: rgba(0,0,0,0.6);
   font-size: 30px;
   margin-top: 30px;
+}
+@media (max-width: 599px) {
+  #specialThanksTitle {
+    font-size: 25px;
+    margin-top: 15px;
+  }
 }
 
 #specialThanksText {
@@ -215,8 +374,13 @@ body {
 }
 
 #bottomDiv {
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
+/* @media (max-width: 599px) {
+  #bottomDiv {
+    padding-bottom: 100px;
+  }
+}   */
 
 #footer {
   background-color: cadetblue;
@@ -226,11 +390,18 @@ body {
   width: 100vw;
   /* margin: 2rem 0; */
 }
+@media (max-width: 599px) {
+  #footer {
+    padding: 10px 0 10px 0;
+  }
+}
 
 #footerGridContainer {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
-  grid-gap: 1rem;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  text-align: center;
+  align-items: center;
 }
 
 .gridItems {
@@ -239,9 +410,10 @@ body {
 }
 
 #websiteLink {
+  grid-column-start: 1;
   color:darkgreen
 }
 
 #copyright {
-  grid-column-start: 7;
+  grid-column-start: 2;
 }
