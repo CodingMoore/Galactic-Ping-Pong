@@ -1,74 +1,63 @@
 #svgWrapper {
+  /* sets an inital transform for use in flipping the plate with jQuery */
   transform: scale(1,1)
 }
 
-
 #headerWrapper {
-  height: 0;
-}
-
-#plateKey {
-  position: sticky;
-  background-color:blueviolet;
-  display: flex;
+  height: 65px;
+  position:sticky;
+  display: grid;
+  /* To keep the header on top of the plate */
   z-index: 1;
-  margin-top: 10px;
-  height: 30px;
 }
 
-.headerItem {
+#headerBackgroundBox {
+  background-color: rgb(46, 46, 46);
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.keyItem {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:chartreuse;
-  z-index: 1;
-  padding: 2px 10px;
+  /* background-color:chartreuse; */
+  padding: 2px 30px;
+}
+
+#plateKey {
+  display: flex;
+  justify-content: center;
+  /* background-color:blueviolet; */
+  height: 30px;
 }
 
 .headerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color:chartreuse; */
   white-space: nowrap;
-  padding-left: 10px;
   font-size: 20px;
+  color: rgb(220, 220, 220);
 }
 
-#plateHeader1 {
-  grid-column-start: 2;
-  grid-column-end: 2;
-  background-color: aqua;
-  z-index: 1;
-  /* height: 50px; */
+.keyText {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: rgb(220, 220, 220);
 }
 
-#plateHeader2 {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  background-color: aqua;
-  z-index: 1;
-  /* height: 50px; */
-}
-
-#plateHeader3 {
-  grid-column-start: 4;
-  grid-column-end: 4;
-  background-color: aqua;
-  z-index: 1;
-  /* height: 50px; */
-}
-
-#plateHeader4 {
-  margin-left: 30px;
-}
-
-.resetPanZoomButtonDiv {
-  height: 0px;
-
+#plateButtons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
 }
 
 #plateResetPanZoomButton {
-  position: relative;
-  top: 70px;
-  left: 16px;
 
-  /* To keep the button on top of the plate */
-  z-index: 1;
+}
+
+#plateFlipButton {
+
 }
