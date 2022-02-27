@@ -17,28 +17,42 @@ $(function() {
     // Triggers a plate reset so that the flip animates
     panzoom.reset();
 
-
-
-    // let xScale = panzoom.getScale(5);
-    // console.log(xScale);
-
-    // Panzoom(element, {
-    //   setTransform: (_, { scale, x, y }) => {
-    //     panzoom.setStyle('transform', `scale(-${scale},${scale})`)
-    //   }
-    // });
-
-    //Does the flipping
+    // Does the flipping
     if($("#svgWrapper").hasClass("plateflipped")) {
-      //$("#svgWrapper").css("transform", "scale(1,1)");
       $("#svgWrapper").removeClass("plateflipped")
     } 
     else {
-      //$("#svgWrapper").css("transform", "scale(-1,1)");
-      //$("#svgImage").css("transform-origin", "50% -50%");
       $("#svgWrapper").addClass("plateflipped")
     }
     
   });
 
+
+  /////////////////////////////////
+  ///Show Background Image Logic///
+  /////////////////////////////////
+
+  $("#backgroundImageButton").click(function() {
+
+    if($("#skyImageBox").hasClass("skyImageOn")) {
+      $("#skyImageBox").removeClass("skyImageOn");
+      $("#skyImageBox").hide();
+    }
+    else {
+      $("#skyImageBox").addClass("skyImageOn");
+      $("#skyImageBox").show();
+    }
+
+    if($("#backgroundFill").hasClass("fillOn")) {
+      $("#backgroundFill").removeClass("fillOn")
+      $("#backgroundFill").hide();
+    }
+    else {
+      $("#backgroundFill").addClass("fillOn")
+      $("#backgroundFill").show();
+    }
+
+  });
+
 });
+

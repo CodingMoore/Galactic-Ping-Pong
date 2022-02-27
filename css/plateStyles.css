@@ -1,7 +1,4 @@
-#svgImage {
-  /* sets an inital transform for use in flipping the plate with jQuery */
-  transform: scale(1,1)
-}
+
 
 #headerWrapper {
   height: 65px;
