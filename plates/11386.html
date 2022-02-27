@@ -64,7 +64,22 @@
   
   <script> 
   
-  const element = document.getElementById('svgWrapper'),panzoom = Panzoom(element, {maxScale: 50,minScale: .75});const parent = element.parentElement;parent.addEventListener('wheel', panzoom.zoomWithWheel);
+  const element = document.getElementById('svgWrapper'),
+  panzoom = Panzoom(element, {
+    maxScale: 50,
+    minScale: .75,
+    setTransform: (_, { scale, x, y }) => {
+      if($("#svgWrapper").hasClass("plateflipped")){
+        let negativeX = -x;
+        panzoom.setStyle('transform', `scale(-${scale},${scale}) translate(${negativeX}px, ${y}px)`)
+      }
+      else {
+        panzoom.setStyle('transform', `scale(${scale},${scale}) translate(${x}px, ${y}px)`)
+      }
+    }
+  });
+  const parent = element.parentElement;parent.addEventListener('wheel', panzoom.zoomWithWheel);
+  
 
 
   </script>
