@@ -44,10 +44,15 @@
 
 #plateKey {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   /* background-color:blueviolet; */
   height: 30px;
   margin: 5px 0px;
+}
+@media (max-width: 599px) {
+  #plateKey {
+    justify-content: space-around;
+  }
 }
 
 .keyItem {
@@ -56,6 +61,12 @@
   align-items: center;
   /* background-color:chartreuse; */
   /* padding: 0px 30px; */
+  margin: 0px 20px;
+}
+@media (max-width: 599px) {
+  .keyItem {
+    margin: 0px 0px;
+  }
 }
 
 .keyDot {
@@ -69,16 +80,23 @@
   color: rgb(220, 220, 220);
 }
 
-#plateButtons {
+#plateButtonBox {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   padding-top: 5px;
 }
-
-#plateResetPanZoomButton {
-
+@media (max-width: 599px) {
+  #plateButtonBox {
+    justify-content: space-around;
+  }
 }
 
-#plateFlipButton {
-
+.plateButton {
+  margin: 0px 20px;
 }
+@media (max-width: 599px) {
+  .plateButton {
+    margin: 0px 0px;
+  }
+}
+
