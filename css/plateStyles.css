@@ -94,6 +94,8 @@
 
 .plateButton {
   margin: 0px 20px;
+  background-color: lightgray;
+  border-radius: 8px;
 }
 @media (max-width: 599px) {
   .plateButton {
