@@ -1,8 +1,14 @@
-
+/* .container {
+  display: block;
+  justify-content: center;
+  align-items: center;
+} */
 
 #headerWrapper {
   height: 65px;
+  position: -webkit-sticky;
   position:sticky;
+  top: 0;
   display: grid;
   /* To keep the header on top of the plate */
   z-index: 1;
@@ -14,20 +20,17 @@
   padding: 10px 20px;
 }
 
-.keyItem {
+#headerTextBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color:chartreuse; */
-  padding: 2px 30px;
+  padding: 0px 5px;
 }
-
-#plateKey {
-  display: flex;
-  justify-content: center;
-  /* background-color:blueviolet; */
-  height: 30px;
-}
+@media (max-width: 520px) {
+  #headerTextBox {
+    display: block;
+  }
+} 
 
 .headerText {
   display: flex;
@@ -37,6 +40,27 @@
   white-space: nowrap;
   font-size: 20px;
   color: rgb(220, 220, 220);
+}
+
+#plateKey {
+  display: flex;
+  justify-content: space-around;
+  /* background-color:blueviolet; */
+  height: 30px;
+  margin: 5px 0px;
+}
+
+.keyItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color:chartreuse; */
+  /* padding: 0px 30px; */
+}
+
+.keyDot {
+  min-width: 30px;
+  min-height: 30px;
 }
 
 .keyText {
