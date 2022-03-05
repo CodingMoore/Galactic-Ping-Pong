@@ -19,6 +19,11 @@
   margin: auto;
   padding: 10px 20px;
 }
+@media (max-width: 400px) {
+  #headerBackgroundBox {
+    padding: 10px 10px;
+  }
+}
 
 #headerTextBox {
   display: flex;
@@ -46,7 +51,7 @@
 #plateKey {
   display: flex;
   justify-content: center;
-  /* background-color:blueviolet; */
+  max-width: 480px; 
   height: 30px;
   margin: 5px 0px;
 }

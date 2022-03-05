@@ -1,6 +1,8 @@
 
 $(function() {
 
+  If you want to run scripts from the plateScripts.js file, you will need to comment out the window.onload in the <scrip> section at the bottom of the html file.  You will also probably need to move all your scripts from there to here. Trying to use scripts both in the html and the plateScripts.js file cuases jquery reference errors because things won't load in the correct order.
+
   /////////////////////////
   ///Reset Panzoom Logic///
   /////////////////////////
