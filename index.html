@@ -126,4 +126,17 @@
     </div>
   </div>
 </body>
+<script>
+  window.onload = function() {
+
+    $(window).resize(function() {
+      $("#footer").css("top", Math.round(window.innerHeight - $("#footer").height())+"px");
+    });
+
+    $(window).scroll(function() {
+      $("#footer").css("top", Math.round(window.innerHeight - $("#footer").height())+"px");
+    });  
+
+  }
+</script>
 </html>
