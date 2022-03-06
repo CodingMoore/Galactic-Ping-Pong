@@ -397,15 +397,17 @@ body {
 
 #footer {
   background-color: cadetblue;
-  padding: 1rem 0 1rem 0;
+  /* padding: 10px 0 10px 0; */
   position: fixed;
   bottom: 0;
   width: 100vw;
+  min-height: 50px;
+  margin-top: -100px;
   z-index: 1;
 }
 @media (max-width: 599px) {
   #footer {
-    padding: 10px 0 10px 0;
+    /* padding: 10px 0 10px 0; */
   }
 }
 
