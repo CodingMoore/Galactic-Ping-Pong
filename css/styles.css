@@ -3,12 +3,13 @@ body {
   background-color: black;
   display: flex;
   justify-content: center;
+  height: 100vh;
+  overflow:scroll;
 }
 
 #bodyContainer {
   padding-left: 0;
   padding-right: 0;
-  overflow: hidden;
 }
 
 /*Alternative to using bodyContainer, which is a bootstrap .Container class.*/
