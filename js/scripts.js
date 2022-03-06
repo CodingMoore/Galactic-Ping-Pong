@@ -88,6 +88,16 @@ $(function() {
   });
 
   /////////////////////////
+  ///Scroll to Top Logic///
+  /////////////////////////
+  $("#topOfPageButton").click(function() {
+    $("html, body").animate({scrollTop : 0},1000);
+    return false;
+  });
+
+
+
+  /////////////////////////
   ///Reset Panzoom Logic///
   /////////////////////////
   $("#gsResetPanZoomButton").click(function() {
