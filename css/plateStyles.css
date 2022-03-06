@@ -1,8 +1,5 @@
-/* .container {
-  display: block;
-  justify-content: center;
-  align-items: center;
-} */
+
+/*
 
 #headerWrapper {
   height: 75px;
@@ -10,7 +7,9 @@
   position:sticky;
   top: 0;
   display: grid;
-  /* To keep the header on top of the plate */
+
+  To keep the header on top of the plate
+
   z-index: 1;
 }
 
@@ -29,7 +28,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 0px 5px; */
 }
 @media (max-width: 520px) {
   #headerTextBox {
@@ -41,7 +39,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color:chartreuse; */
   white-space: nowrap;
   font-size: 20px;
   color: rgb(220, 220, 220);
@@ -65,8 +62,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color:chartreuse; */
-  /* padding: 0px 30px; */
   margin: 0px 20px;
 }
 @media (max-width: 599px) {
