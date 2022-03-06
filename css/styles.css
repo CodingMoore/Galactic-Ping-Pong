@@ -401,7 +401,7 @@ body {
   background-color: cadetblue;
   /* padding: 10px 0 10px 0; */
   position: fixed;
-  bottom: 0vh;
+  bottom:0vmax;
   width: 100vw;
   min-height: 50px;
   
