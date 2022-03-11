@@ -31,17 +31,21 @@
           <div id="roomSelectionDiv">
             <a id="gsGalleryAnchor" class="roomSelectionAnchor" href="#gsDiv">
               <img id="gsGalleryLink" class="roomSelectionLink" src="./assets/GalleryLinkImages/gsGalleryLinkImage.png" />
-            </a>
+            </a>         
             <a id="mpStudioAnchor" class="roomSelectionAnchor" href="#mpDiv">
               <img id="mpStudioLink" class="roomSelectionLink" src="./assets/GalleryLinkImages/mpStudioLinkImage.png" />
             </a>
           </div>
           <div id="gsDiv"  style="display: block">
-            <div class="locationDivText" id="gsGalleryTextDiv">
-              Gretchen Schuette Gallery
+            <div id="gsLocationDivWrapper">
+              <div class="locationDivBorderBox" id="gsLocationDiv">
+                <div class="locationDivText" id="gsGalleryTextDiv">
+                  Gretchen Schuette Gallery
+                </div>
+              </div>
             </div>
             <div class="resetPanZoomButtonDiv">
-              <button id="gsResetPanZoomButton">Reset</button>
+              <button class="resetPanZoomButton" id="gsResetPanZoomButton">Reset</button>
             </div>
             <div id="gsSvgOutsideContainer" class="svgOutsideContainer">
               <div id="gsSvgMapWrapper" class="svgMapWrapper">
@@ -59,22 +63,45 @@
                 <svg id="gsSvgMap" width="600" height="auto" viewBox="0 0 300 300" transform-origin="0 0" preserveAspectRatio="xMidYMin meet" x="0" y="0">
 
                   <!-- Example plate representations -->
-                  <a href="./plates/11386.html" target="_blank"><circle cx="40" cy="100" r="14" stroke="green" stroke-width="1" fill="blue" /></a> 
-                  <a href="./plates/8219.html" target="_blank"><circle cx="100" cy="250" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-                  <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="200" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-                  <a href="./plates/8219.html" target="_blank"><circle cx="200" cy="229" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-                  <a href="./plates/8219.html" target="_blank"><circle cx="225" cy="214.5" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
-                  <a href="./plates/8219.html" target="_blank"><circle cx="275" cy="100" r="14" stroke="black" stroke-width="1" fill="blue" /></a> 
+                    
+                  <a href="./plates/11386.html" target="_blank">
+                    <circle cx="40" cy="100" r="14" class="plateIcon" />
+                    <!-- x and y coordinates applied via javascript, to equal the cx and cy from the sibling circle -->
+                    <text dominant-baseline='middle' text-anchor='middle' class="plateIconText">Plate</text>
+                  </a>
+
+                  <a href="./plates/11379.html" target="_blank">
+                    <circle cx="150" cy="150" r="14" class="plateIcon" />
+                    <!-- x and y coordinates applied via javascript, to equal the cx and cy from the sibling circle -->
+                    <text dominant-baseline='middle' text-anchor='middle' class="plateIconText">Plate</text>
+                  </a> 
+                  
+                  <a href="./plates/8057.html" target="_blank">
+                    <circle cx="100" cy="250" r="14" class="plateIcon" />
+                    <!-- x and y coordinates applied via javascript, to equal the cx and cy from the sibling circle -->
+                    <text dominant-baseline='middle' text-anchor='middle' class="plateIconText">Plate</text>
+                  </a> 
+
+                  <a href="./plates/8129.html" target="_blank">
+                    <circle cx="250" cy="125" r="14" class="plateIcon" />
+                    <!-- x and y coordinates applied via javascript, to equal the cx and cy from the sibling circle -->
+                    <text dominant-baseline='middle' text-anchor='middle' class="plateIconText">Plate</text>
+                  </a> 
+
                 </svg>
               </div>
             </div>
           </div>
           <div id="mpDiv" style="display: none">
-            <div class="locationDivText" id="mpStudioTextDiv">
-              Media Production Studio
+            <div id="mpLocationDivWrapper">
+              <div class="locationDivBorderBox" id="mpLocationDiv">
+                <div class="locationDivText" id="mpStudioTextDiv">
+                  Media Production Studio
+                </div>
+              </div>
             </div>
             <div class="resetPanZoomButtonDiv">
-              <button id="mpResetPanZoomButton">Reset</button>
+              <button class="resetPanZoomButton" id="mpResetPanZoomButton">Reset</button>
             </div>
             <div id="mpSvgOutsideContainer" class="svgOutsideContainer">
               <div id="mpSvgMapWrapper" class="svgMapWrapper">
@@ -91,34 +118,41 @@
               </div>
             </div>
           </div>
-          <div class="paragraphTitle" id="artistStatementTitle">
-            Artist's Statement
+          <div class="paragraphTitleWrapper" id="gsParagraphTitleWrapper">
+            <div class="paragraphTitle" id="artistStatementTitle">
+              Artist's Statement
+            </div>
           </div>
-          <div id="artistStatementText">
+          <div class="copy" id="artistStatementText">
+            <p>
             Interdisciplinary artist Kathryn Cellerini Moore is a nerd and a space-maker who collaborates with architecture, landscape and community. In a political climate that fabricates and serves us unhelpful dichotomies to live by, Moore feels urgency to create moments for people to reflect on our interconnectedness to one another. Blending her training in both the arts and sciences, Moore’s art dives into the psychology and physiology of trauma, coping, and healing, the relationship of memory to identity and place, and most recently, the influence environment has on our well-being. How can we meaningfully we engage with the microscopic and macroscopic ecosystems we are a part of?
             <br />
             <br />
 
-
             Kathryn Cellerini Moore's artwork was curated into the Month of Performance Art in Berlin, Germany, the Does Live Art Have to Be Experienced Live? performance art series at SOIL Gallery in Seattle, WA, and the experimental performance event Collective Becoming: Expressions of Love, Freedom and Resistance at the School of the Art Institute in Chicago. Her work was exhibited in venues including The Art and History Museum in Maitland, FL; Duplex Gallery in Portland, OR; The Schneider Museum of Art in Ashland, OR; The McDonough Museum of Art in Youngstown, OH; The Center of Contemporary Art (CoCA) in Seattle, WA; Hunter College Times Square Gallery in NY, NY; and Besse Gallery at Bay College, Escanaba, MI. Moore presented her research at the first Mokuhanga Conference in Kyoto and Awaji, Japan, and was recently an artist-in-residence at PLAYA Summer Lake, TEDx, and Djerassi Artist Residency Program. In 2020, Moore joined the Oregon Art Commission’s Art in Public Places artist roster.
+            </p>
           </div>
-          <div class="paragraphTitle" id="specialThanksTitle">
-            Special Thanks
+          <div class="paragraphTitleWrapper" id="mpParagraphTitleWrapper"> 
+            <div class="paragraphTitle" id="specialThanksTitle">
+              Special Thanks
+            </div>
           </div>
-          <div id="specialThanksText">
+          <div class="copy" id="specialThanksText">
+            <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nulla justo. Sed sagittis lacus arcu, in dictum felis ornare in. Morbi cursus ligula mauris, ac gravida orci convallis finibus. Mauris non tortor iaculis, fringilla massa ac, euismod erat. Aenean elementum, diam et mattis malesuada, est leo sollicitudin tortor, eget pharetra eros turpis vitae turpis. Vivamus iaculis ante ut felis elementum lacinia. Nullam risus odio, ultrices et commodo sit amet, cursus a mi.
             <br />
             <br />
 
             Aliquam commodo ex sit amet pharetra dignissim. Aliquam commodo massa ac tortor aliquet lacinia. Mauris accumsan aliquet est, sed scelerisque massa dictum ac. Morbi ullamcorper tellus erat, non vehicula velit lobortis vel. Nunc urna nisl, consequat in pellentesque ut, euismod sed justo. Etiam in tellus eget nunc laoreet pellentesque a ut velit. Morbi at dignissim lacus. Sed tempus eu metus a varius. Aliquam porta arcu nibh, id gravida lectus faucibus eget. Cras porttitor magna urna, id viverra nulla fringilla commodo. Nunc consectetur urna ut ante convallis molestie. Integer tempor ut nibh eget aliquam.
+            </p>
           </div>
           <div id="bottomDiv">
           </div>
         </div>
       </div>
     </div>
-  </div> 
-  <div id="footer">
+  </div>
+  <div class="container" id="footer">
     <div class="container" id="footerGridContainer">
       <a class="gridItems" id="websiteLink" href="https://kmoostudios.com">kmoostudios</a>
       <button class="gridItems" id="topOfPageButton">Top of Page</a></button>

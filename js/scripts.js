@@ -3,11 +3,6 @@
 // UI Logic
 $(function() {
 
-
-  let vh = window.innerHeight * 0.01;
-
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-
   // ////////////////////////////
   // ///panzoom logic (anvaka)///
   // ////////////////////////////
@@ -60,20 +55,26 @@ $(function() {
   ///Div Hide/Show Logic///
   /////////////////////////
   
-  $("#gsGalleryLink").css("border-color", "blue");
+  $("#gsGalleryLink").css("border-color", "rgb(17, 98, 248)");
+  $("#mpStudioLink").css( {opacity: .3} );
+  // $("#mpGalleryLink").css("filter", "alpha(opacity=40;)");
 
   $("#gsGalleryAnchor").click(function() {
     $("#mpDiv").hide();
     $("#gsDiv").show();
     $("#mpStudioLink").css("border-color", "black");
-    $("#gsGalleryLink").css("border-color", "blue");
+    $("#gsGalleryLink").css("border-color", "rgb(17, 98, 248)");
+    $("#gsGalleryLink").css( {opacity: 1} );
+    $("#mpStudioLink").css( {opacity: .3} );
   });
   
   $("#mpStudioAnchor").click(function() {
     $("#gsDiv").hide();
     $("#mpDiv").show();
     $("#gsGalleryLink").css("border-color", "black");
-    $("#mpStudioLink").css("border-color", "blue");
+    $("#mpStudioLink").css("border-color", "rgb(17, 98, 248)");
+    $("#gsGalleryLink").css( {opacity: .3} );
+    $("#mpStudioLink").css( {opacity: 1} );
   });
   
   
@@ -81,13 +82,42 @@ $(function() {
   ///Scroll to Div Logic///
   /////////////////////////
   $('a[href*=\\#]:not([href=\\#])').on('click', function() {
-    var target = $(this.hash);
+    let target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+
+    const targetAbsoluteBottom = target.offset().top + target.outerHeight(true);
+    const visibleAreaHeight = visualViewport.height - $("#footer").height();
+    const targetRelativeBottom = ($(window).scrollTop() + visibleAreaHeight) - targetAbsoluteBottom;
+
     if (target.length) {
+
+      // Checks to see if we need to scroll to see the bottom of the div.
+      // If we don't need to scroll, and we can still click the button, then
+      // the div must already be fitting on the screen and there is nothing to do.
+      if (targetRelativeBottom > 0) {
+
+          // Do Nothing!
+ 
+      } 
+      // if the bottom of the div is below the screen, but the entire div
+      // will fit in the visible area of the the screen, scroll down until the
+      // bottom of the div is at the bottom of the visible area of the screen.
+      else if (target.height() < visibleAreaHeight) {
         $('html,body').animate({
-            scrollTop: target.offset().top
+          scrollTop: targetAbsoluteBottom - visibleAreaHeight
         }, 1000);
-        return false;
+
+      }
+      // if the div is below the screen, and is too large to fit in the visible
+      // area of the screen, scroll down until the top of the div (+ 40px) is
+      // at the top of the screen.
+      else {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 40
+        }, 1000);
+      }
+      
+      return false;
     }
   });
 
@@ -111,5 +141,28 @@ $(function() {
   $("#mpResetPanZoomButton").click(function() {
     panzoom2.reset();
   });
+
+
+  ///////////////////////////////////////////
+  ///Plate label value & positioning logic///
+  ///////////////////////////////////////////
+
+  // Creates an array of all elements with the .plateIcon class
+  const plateArray = [...$(".plateIcon")]
+
+
+  plateArray.forEach( plate => {
+    
+    // for each plate in the array, take the cx and cy values of the circle, and apply them to the x and y values of their sibling element (the <tex>).
+    $(plate).siblings().attr("x", $(plate).attr("cx"));
+    $(plate).siblings().attr("y", $(plate).attr("cy"));
+
+    // for each plate in the array, label the plate using the plate number that is pulled out of the parent <a> href value
+    const plateText = $(plate).parent().attr("href").slice(9, -5);
+
+    $(plate).siblings().text(plateText);
+
+  });
+
 
 });
