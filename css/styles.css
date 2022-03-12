@@ -457,6 +457,95 @@ body {
   } 
 }
 
+.instructionsWrapper {
+  display: flex;
+  justify-content: center;
+  max-height: 30px;
+  margin-bottom: 10px;
+}
+@media (max-width: 991px) {
+  .instructionsWrapper {
+    max-height: 22px;
+    margin-bottom: 5px;
+  }
+}
+/* @media (max-width: 499px) {
+  .instructionsWrapper {
+    max-height: 22px;
+    margin-bottom: 5px;
+  }
+} */
+@media (max-width: 449px) {
+  .instructionsWrapper {
+    max-height: 18px;
+    /* margin-bottom: 5px; */
+  }
+}
+/* @media (max-width: 381px) {
+  .instructionsWrapper {
+    max-height: 18px;
+  }
+} */
+
+.instructionsText {
+  display: flex;
+  align-items: center;
+  color: rgb(134, 134, 134);
+  font-size: 28px;
+}
+@media (max-width: 1199px) {
+  .instructionsText {
+    font-size: 24px;
+  }
+}
+@media (max-width: 991px) {
+  .instructionsText {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .instructionsText {
+    font-size: 16px;
+  }
+}
+@media (max-width: 549px) {
+  .instructionsText {
+    font-size: 14px;
+  }
+}
+@media (max-width: 499px) {
+  .instructionsText {
+    font-size: 13px;
+  }
+}
+@media (max-width: 449px) {
+  .instructionsText {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+}
+@media (max-width: 381px) {
+  .instructionsText {
+    max-width: 130px;
+  }
+}
+@media (max-width: 349px) {
+  .instructionsText {
+    font-size: 10px;
+  }
+}
+
+.instructionsSvgWrapper {
+  max-width: 30px;
+  margin: 2px 8px;
+}
+@media (max-width: 449px) {
+  .instructionsSvgWrapper {
+    max-width: 30px;
+    margin: 0px 8px;
+  }
+}
+
 .svgOutsideContainer {
   /* background-color: aquamarine; */
   /* background-color: rgb(134, 134, 134); */
@@ -788,7 +877,7 @@ body {
   grid-column-end: 3;
 }
 
-.plateIcon {
+.plateIcon, .examplePlateIcon {
   fill: rgb(17, 98, 248);
   /* fill: rgb(5, 204, 128); */
   /* fill: rgb(255, 0, 132); */
