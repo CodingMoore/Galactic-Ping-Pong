@@ -24,13 +24,14 @@ $(function() {
   const element = document.getElementById("gsSvgMapWrapper");
   const panzoom = Panzoom(element, {
   // options here
-  maxScale: 2,
-  minScale: 1
+  maxScale: 3,
+  minScale: .75,
+  step: 1,
   // ,contain: "outside"
   });
 
   // first value is starting zoom level
-  panzoom.zoom(1, { animate: true })
+  // panzoom.zoom(1, { animate: true })
 
   // enable mouse wheel
   const parent = element.parentElement;
@@ -41,8 +42,9 @@ $(function() {
   const element2 = document.getElementById("mpSvgMapWrapper");
   const panzoom2 = Panzoom(element2, {
   // options here
-  maxScale: 2,
-  minScale: 1
+  maxScale: 3,
+  minScale: .75,
+  step: 1,
   // ,contain: "outside"
   });
   
