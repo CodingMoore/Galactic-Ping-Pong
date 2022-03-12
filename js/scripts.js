@@ -26,7 +26,7 @@ $(function() {
   // options here
   maxScale: 3,
   minScale: .75,
-  step: 1,
+  step: 1.5,
   // ,contain: "outside"
   });
 
@@ -44,7 +44,7 @@ $(function() {
   // options here
   maxScale: 3,
   minScale: .75,
-  step: 1,
+  step: 1.5,
   // ,contain: "outside"
   });
   
