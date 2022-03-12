@@ -647,6 +647,40 @@ body {
   }
 }  
 
+#whatAreThePlatesWrapper {
+  margin-top: 15px;
+}
+@media (max-width: 767px) {
+  #whatAreThePlatesWrapper {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 425px) {
+  #whatAreThePlatesWrapper {
+    max-width: 160px;
+  }
+}
+
+#whatAreThePlatesText {
+  line-height: 1.2;
+  color: rgb(134, 134, 134);
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  #whatAreThePlatesText {
+    font-size: 16px;
+  }
+}
+@media (max-width: 470px) {
+  #whatAreThePlatesText {
+    font-size: 14px;
+  }
+}
+
+#whatAreThePlatesLink {
+  color: rgb(255, 0, 132);
+}
+
 
 /* .textBackground {
   background-color: black;
@@ -663,11 +697,11 @@ body {
   /* border-color: rgb(17, 98, 248); */
 }
 
-#gsParagraphTitleWrapper {
+#artistStatementParagraphTitleWrapper {
   border-color: rgb(17, 98, 248);
 }
 
-#mpParagraphTitleWrapper {
+#specialThanksParagraphTitleWrapper {
   border-color: rgb(5, 204, 128);
 }
 
