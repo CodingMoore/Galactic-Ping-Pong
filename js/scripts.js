@@ -101,10 +101,10 @@ $(function() {
       } 
       // if the bottom of the div is below the screen, but the entire div
       // will fit in the visible area of the the screen, scroll down until the
-      // bottom of the div is at the bottom of the visible area of the screen.
+      // bottom of the div is at the bottom of the visible area of the screen (+10px).
       else if (target.height() < visibleAreaHeight) {
         $('html,body').animate({
-          scrollTop: targetAbsoluteBottom - visibleAreaHeight
+          scrollTop: (targetAbsoluteBottom - visibleAreaHeight) + 10
         }, 1000);
 
       }
