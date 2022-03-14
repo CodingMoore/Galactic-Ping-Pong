@@ -757,7 +757,6 @@ body {
 } */
 
 .copy {
-  display: inline-flex;
   /* color:antiquewhite; */
   color: rgb(180, 180, 180);
   color: rgb(215, 215, 215);
