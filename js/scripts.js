@@ -59,12 +59,14 @@ $(function() {
   
   $("#gsGalleryLink").css("border-color", "rgb(17, 98, 248)");
   $("#mpStudioLink").css( {opacity: .3} );
-  // $("#mpGalleryLink").css("filter", "alpha(opacity=40;)");
+  $("#mpStudioLink").css( "border-style", "dashed");
+  $("#mpStudioLink").css("border-color", "rgb(17, 98, 248)");
 
   $("#gsGalleryAnchor").click(function() {
     $("#mpDiv").hide();
     $("#gsDiv").show();
-    $("#mpStudioLink").css("border-color", "black");
+    $("#gsGalleryLink").css( "border-style", "solid");
+    $("#mpStudioLink").css( "border-style", "dashed");
     $("#gsGalleryLink").css("border-color", "rgb(17, 98, 248)");
     $("#gsGalleryLink").css( {opacity: 1} );
     $("#mpStudioLink").css( {opacity: .3} );
@@ -73,7 +75,8 @@ $(function() {
   $("#mpStudioAnchor").click(function() {
     $("#gsDiv").hide();
     $("#mpDiv").show();
-    $("#gsGalleryLink").css("border-color", "black");
+    $("#gsGalleryLink").css( "border-style", "dashed");
+    $("#mpStudioLink").css( "border-style", "solid");
     $("#mpStudioLink").css("border-color", "rgb(17, 98, 248)");
     $("#gsGalleryLink").css( {opacity: .3} );
     $("#mpStudioLink").css( {opacity: 1} );

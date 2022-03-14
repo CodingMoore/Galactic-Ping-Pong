@@ -255,6 +255,7 @@ body {
   background-position-y: top;
   background-size: cover;
   max-width: 100%;
+  /* borders handled by scripts.js */
 }
 @media (max-width: 1199px) {
   #roomSelectionDiv {
