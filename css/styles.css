@@ -757,6 +757,22 @@ body {
   } 
 } */
 
+#specialThanksTextHeader {
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  #specialThanksTextHeader {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 499px) {
+  #specialThanksTextHeader {
+    font-size: 16px;
+  }
+}
+
+
 .copy {
   /* color:antiquewhite; */
   color: rgb(180, 180, 180);
@@ -766,6 +782,11 @@ body {
   /* Only needed if there is a background image behind the text */
   /* background: rgba(0,0,0,0.6); */
   margin-top: 20px;
+}
+@media (max-width: 399px) {
+  .copy {
+    font-size: 14px;
+  }
 }
 
 /* #specialThanksText {
