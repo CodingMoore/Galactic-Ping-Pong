@@ -536,13 +536,34 @@ body {
   }
 }
 
+.examplePlateIconDivider {
+  stroke:rgb(5, 204, 128);
+  stroke-width: 3;
+}
+
+/* .instructionsSvg {
+  max-height: fit-content;
+} */
+
 .instructionsSvgWrapper {
-  max-width: 30px;
+  display: flex;
+  justify-content: center;
+  max-width: 80px;
   margin: 2px 8px;
+}
+@media (max-width: 991px) {
+  .instructionsSvgWrapper {
+    max-width: 50px;
+  }
+}
+@media (max-width: 471px) {
+  .instructionsSvgWrapper {
+    max-width: 30px;
+  }
 }
 @media (max-width: 449px) {
   .instructionsSvgWrapper {
-    max-width: 30px;
+    /* max-width: 10px; */
     margin: 0px 8px;
   }
 }
