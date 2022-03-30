@@ -597,9 +597,9 @@ body {
 }
 
 #mpSvgMap {
-  background: url('../assets/MP-Galactic-PingPong-v2.svg');
+  background: url('../assets/MP-Galactic-PingPong-v3.svg');
   background-repeat: no-repeat;
-  aspect-ratio: 600/825;
+  aspect-ratio: 391/720;
 
   /* used to view the size/shape of the svg */
   /* border-style: dashed;

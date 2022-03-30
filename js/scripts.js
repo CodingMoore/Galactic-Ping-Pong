@@ -161,6 +161,17 @@ $(function() {
     // for each plate in the array, take the cx and cy values of the circle, and apply them to the x and y values of their sibling element (the <tex>).
     $(plate).siblings().attr("x", $(plate).attr("cx"));
     $(plate).siblings().attr("y", $(plate).attr("cy"));
+    
+    // rx and ry values for ellipses
+    // If the plate has an rx attribute, then it must be an ellipse, so run the code.
+    if($(plate).attr("rx")){
+      // Offsets the text from the center
+      $(plate).siblings().attr("y", (parseInt($(plate).attr("cy")) - 8).toString());
+
+      // Rotates text to match rotation of ellipse
+      $(plate).siblings().attr("transform-origin", "center");
+      $(plate).siblings().attr("transform", $(plate).attr("transform"));
+    }
 
     // for each plate in the array, label the plate using the plate number that is pulled out of the parent <a> href value
     const plateText = $(plate).parent().attr("href").slice(9, -5);
