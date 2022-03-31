@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 431 361" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1.5;">
+    <g transform="matrix(1.00937,0,0,1.0112,-0.0198062,-0.0168346)">
+        <path d="M2.001,1.994L2.001,355.003" style="fill:none;stroke:black;stroke-width:4px;"/>
+    </g>
+    <path d="M429,2L2,2" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <path d="M429,2L429,358.964" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <path d="M271,358.964L2,358.964" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <path d="M429,358.964L343,358.964" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <path d="M2,62L124,62" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <path d="M124,62L124,50" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <path d="M124,2L124,14" style="fill:none;stroke:black;stroke-width:4px;"/>
+    <path d="M124,14L124,50" style="fill:none;stroke:black;stroke-width:2px;"/>
+    <g transform="matrix(0.445643,0,-2.22045e-16,2.31402,-33.0489,-91.1542)">
+        <path d="M189.51,151.051L101.996,151.051L101.996,192.97L189.51,192.97L189.51,151.051ZM110.972,152.78L110.972,191.241L180.534,191.241L180.534,152.78L110.972,152.78Z"/>
+    </g>
+    <g transform="matrix(0.365049,-0.25561,1.32726,1.89553,-232.059,-69.4832)">
+        <path d="M189.51,151.051L101.996,151.051L101.996,192.97L189.51,192.97L189.51,151.051ZM110.972,152.78L110.972,191.241L180.534,191.241L180.534,152.78L110.972,152.78Z"/>
+    </g>
+    <g transform="matrix(0.365049,0.25561,-1.32726,1.89553,224.548,-247.107)">
+        <path d="M189.51,151.051L101.996,151.051L101.996,192.97L189.51,192.97L189.51,151.051ZM110.972,191.241L180.534,191.241L180.534,152.78L110.972,152.78L110.972,191.241Z"/>
+    </g>
+</svg>
