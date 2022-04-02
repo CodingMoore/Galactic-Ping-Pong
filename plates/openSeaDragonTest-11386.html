@@ -20,8 +20,15 @@
   <!-- New Below -->
   <script src="../openseadragon/openseadragon.min.js"></script>
   <script src="../svg-overlay-master/openseadragon-svg-overlay.js"></script>
+  <!-- <script src="../js/jquery-ui-1.13.1.custom/jquery-ui.js"></script> -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/ui-darkness/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+  
+  <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/black-tie/jquery-ui.css"></script> -->
   <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js" integrity="sha512-Dq5iZeGNxm7Ql/Ix10sugr98niMRyuObKlIzKN1SzUysEXBxti479CTsCiTV00gFlDeDO3zhBsyCOO+v6QVwJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  -->
+  
   <!-- New Above -->
 
 	<style>   
@@ -128,11 +135,16 @@
 			height: 0;   
 		}   
 
+    /* New Below */
 		#plateNumberDisplay {   
 			position: relative;   
-			top: 20px;   
-			color: rgb(215,215,215);   
-		}   
+			top: 20px;
+      margin-left: 20px;
+      font-size: 20px;
+			color: rgb(215,215,215);
+      z-index: 1;
+		}  
+    /* New Above */
 
     #skyImageBoxBackgroundImage {
       image-rendering: smooth;
@@ -146,6 +158,20 @@
       border-width: 2px;
       border-color: crimson;
     }
+
+    #slider {
+      display: relative;
+      top: 10px;
+      margin: 0 20%;
+      height: 30px;
+      z-index: 1;
+    }
+
+    .ui-slider-handle {
+      display: flex;
+      justify-content: center;
+    } 
+
     /* New Above */
 
 	</style>   
@@ -195,20 +221,31 @@
 					<button id='plateResetPanZoomButton' class='plateButton'>Reset: Pan & Zoom</button>   
 					<button id='plateFlipButton' class='plateButton'>Flip Plate</button>   
 					<button id='backgroundImageButton' class='plateButton'>Background</button>   
-				</div>   
-				<div id='plateNumberDisplayWrapper'>   
+				</div>
+        <!-- New Below    -->
+				<!-- <div id='plateNumberDisplayWrapper'>   
 					<div id='plateNumberDisplay'>   
 						Plate 11386   
 					</div>   
-				</div>   
+				</div>    -->
+        <!-- New Above -->
 			</div>   
 		</div>   
 	</div>
   
   <!-- New Below -->
+
+  <!-- <div id="slider" style="margin: 10px" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 50%;"></span></div> -->
+
   <!-- <div id="myContainer" style="width:900px; height:500px; margin:auto; border:1px; border-style:solid; " ></div> -->
   <div class="container">
-    <div id="openSeaDragonWrapper" ></div>
+    <div id="slider"></div>
+    <div id='plateNumberDisplayWrapper'>
+      <div id='plateNumberDisplay'>   
+        Plate 11386   
+      </div> 
+    </div>
+    <div id="openSeaDragonWrapper"></div>
   </div>
   <!-- New Above -->
 
@@ -3755,6 +3792,10 @@
         showFlipControl: true,
         showRotationControl: true,
         showNavigator: true,
+        // Degrees set to != 0 to prevent bug -- Where while the tiled image is flipped, 
+        // if you zoom in beyond the max pixel ratio (maxZoomPixelRation) of 1.1, 
+        // the tiled image flips back to its original orientation.
+        degrees: .0000000001,
         maxZoomPixelRatio: 4,
         zoomPerScroll: 2,
         tileSources: [
@@ -3775,17 +3816,40 @@
       ],
     });
 
-    var overlay = viewer.svgOverlay()
+    var overlay = viewer.svgOverlay({
+      rotate: 45
+    })
+    
     //overlay.node().parentNode.style.pointerEvents = 'none';
     overlay.node().append(svgImage)
 
+    new OpenSeadragon.MouseTracker({  
+      element: overlay._node,
+      clickHandler: function(event) {
+        var target = event.originalTarget.parentNode;
+        if (target.matches('a')) {
+          if (target.getAttribute('target') === '_blank') {
+            window.open(target.getAttribute('href'));
+          } else {
+            location.href = target.getAttribute('href');
+          }
+        }
+      }
+    });
 
 
-    // new OpenSeadragon.MouseTracker({  
-    //       element: overlay._node,
+
+    // $("#slider").data("option","slide").change(function() {
+    //   viewer.viewport.setRotation($("#slider").slider("option", "value"));
+    // });
+
+    // for (let i=0; i < overlay._node.children[0].children.length; i++) {
+    //   if(overlay._node.children[0].children[i].nodeName === "a"){
+    //     new OpenSeadragon.MouseTracker({  
+    //       element: overlay._node.children[0].children[i],
     //       clickHandler: function(event) {
     //         var target = event.originalEvent.target;
-    //         if (target.firstChild.children.matches('a')) {
+    //         if (target.matches('a')) {
     //           if (target.getAttribute('target') === '_blank') {
     //             window.open(target.getAttribute('href'));
     //           } else {
@@ -3794,28 +3858,29 @@
     //         }
     //       }
     //     });
+    //   }
+    // }
 
-    for (let i=0; i < overlay._node.children[0].children.length; i++) {
 
-      if(overlay._node.children[0].children[i].nodeName === "a"){
-        
-        new OpenSeadragon.MouseTracker({  
-          element: overlay._node.children[0].children[i],
-          clickHandler: function(event) {
-            var target = event.originalEvent.target;
-            if (target.matches('a')) {
-              if (target.getAttribute('target') === '_blank') {
-                window.open(target.getAttribute('href'));
-              } else {
-                location.href = target.getAttribute('href');
-              }
-            }
-          }
-        });
-        
-      }
+      $("#slider").slider({
+        max: 360
+      });
 
-    }
+      //This edits the size and placement of the slider handle.  Doing it in the styles doesn't seem to work.
+      $(".ui-slider-handle")
+        .height(30)
+        .width(70)
+        .css("margin-left", "-35px")
+        .css("margin-top", "3px")
+        .text("Rotate")
+        .css("color", "lightgray");
+
+      // Sets the rotation angle to the value of the slider
+      $("#slider").slider({slide: function(event, ui) {
+        viewer.viewport.setRotation(ui.value);
+        }
+      });
+
   
     // New Above
 

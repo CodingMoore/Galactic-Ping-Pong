@@ -42,10 +42,6 @@
         this._node = document.createElementNS(svgNS, 'g');
         this._svg.appendChild(this._node);
 
-        this._viewer.addHandler('flip', function() {
-            self.flipResize();
-        });
-
         this._viewer.addHandler('animation', function() {
             self.resize();
         });
@@ -56,6 +52,10 @@
 
         this._viewer.addHandler('rotate', function(evt) {
             self.resize();
+        });
+
+        this._viewer.addHandler('flip', function() {
+          self.resize();
         });
 
         this._viewer.addHandler('resize', function() {
@@ -73,26 +73,6 @@
         },
 
         // ----------
-        flipResize: function() {
-          if (this._containerWidth !== this._viewer.container.clientWidth) {
-              this._containerWidth = this._viewer.container.clientWidth;
-              this._svg.setAttribute('width', this._containerWidth);
-          }
-
-          if (this._containerHeight !== this._viewer.container.clientHeight) {
-              this._containerHeight = this._viewer.container.clientHeight;
-              this._svg.setAttribute('height', this._containerHeight);
-          }
-
-          var p = this._viewer.viewport.pixelFromPoint(new $.Point(0, 0), true);
-          var zoom = this._viewer.viewport.getZoom(true);
-          var rotation = this._viewer.viewport.getRotation();
-          // TODO: Expose an accessor for _containerInnerSize in the OSD API so we don't have to use the private variable.
-          var scale = this._viewer.viewport._containerInnerSize.x * zoom;
-          this._node.setAttribute('transform',
-              'translate(' + p.x + ',' + p.y + ') scale(' + scale + ') rotate(' + rotation + ')');
-      },
-        
         resize: function() {
             if (this._containerWidth !== this._viewer.container.clientWidth) {
                 this._containerWidth = this._viewer.container.clientWidth;
@@ -107,11 +87,42 @@
             var p = this._viewer.viewport.pixelFromPoint(new $.Point(0, 0), true);
             var zoom = this._viewer.viewport.getZoom(true);
             var rotation = this._viewer.viewport.getRotation();
+            var flipped = this._viewer.viewport.getFlip();
             // TODO: Expose an accessor for _containerInnerSize in the OSD API so we don't have to use the private variable.
+            
             var scale = this._viewer.viewport._containerInnerSize.x * zoom;
-            this._node.setAttribute('transform',
-                'translate(' + p.x + ',' + p.y + ') scale(' + scale + ') rotate(' + rotation + ')');
+
+            if(flipped){
+
+              // Translates svg back into the correct coordinates after the x scale is made negative.
+              p.x = -p.x + this._viewer.viewport._containerInnerSize.x;
+              // Makes the x component of the scale negative
+              this._node.setAttribute('transform',
+                  'translate(' + p.x + ',' + p.y + ') scale(' + -scale + ',' + scale + ') rotate(' + rotation + ')');
+              
+              console.log("scale", scale);
+              console.log("rotation", rotation);
+
+            } else {
+              this._node.setAttribute('transform',
+                  'translate(' + p.x + ',' + p.y + ') scale(' + scale + ') rotate(' + rotation + ')');
+
+              console.log("scale", scale);
+              console.log("rotation", rotation);
+            }
         },
+
+
+            // console.log("scale", scale);
+            // console.log("scale X", this._viewer.viewport._containerInnerSize.x * zoom);
+            // console.log("scale Y", this._viewer.viewport._containerInnerSize.y * zoom);
+            // console.log("zoom", zoom);
+            // console.log("InnerSize X", this._viewer.viewport._containerInnerSize.x);
+            // console.log("InnerSize Y", this._viewer.viewport._containerInnerSize.y);
+            // console.log("p", p);
+            // console.log("new p", p);
+            //console.log("scale", scale);
+            
 
         // ----------
         onClick: function(node, handler) {
