@@ -100,14 +100,12 @@
               this._node.setAttribute('transform',
                   'translate(' + p.x + ',' + p.y + ') scale(' + -scale + ',' + scale + ') rotate(' + rotation + ')');
               
-              console.log("scale", scale);
               console.log("rotation", rotation);
 
             } else {
               this._node.setAttribute('transform',
                   'translate(' + p.x + ',' + p.y + ') scale(' + scale + ') rotate(' + rotation + ')');
 
-              console.log("scale", scale);
               console.log("rotation", rotation);
             }
         },

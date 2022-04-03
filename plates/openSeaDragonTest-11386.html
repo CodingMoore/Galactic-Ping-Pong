@@ -3837,33 +3837,10 @@
       }
     });
 
-
-
-    // $("#slider").data("option","slide").change(function() {
-    //   viewer.viewport.setRotation($("#slider").slider("option", "value"));
-    // });
-
-    // for (let i=0; i < overlay._node.children[0].children.length; i++) {
-    //   if(overlay._node.children[0].children[i].nodeName === "a"){
-    //     new OpenSeadragon.MouseTracker({  
-    //       element: overlay._node.children[0].children[i],
-    //       clickHandler: function(event) {
-    //         var target = event.originalEvent.target;
-    //         if (target.matches('a')) {
-    //           if (target.getAttribute('target') === '_blank') {
-    //             window.open(target.getAttribute('href'));
-    //           } else {
-    //             location.href = target.getAttribute('href');
-    //           }
-    //         }
-    //       }
-    //     });
-    //   }
-    // }
-
-
       $("#slider").slider({
-        max: 360
+        min: 0.000001,
+        max: 359.999999,
+        step: .000001
       });
 
       //This edits the size and placement of the slider handle.  Doing it in the styles doesn't seem to work.
@@ -3878,6 +3855,7 @@
       // Sets the rotation angle to the value of the slider
       $("#slider").slider({slide: function(event, ui) {
         viewer.viewport.setRotation(ui.value);
+        console.log("jQuery Script", ui.value)
         }
       });
 
