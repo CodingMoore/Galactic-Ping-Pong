@@ -11,22 +11,26 @@
 	<!-- <link href='../css/plateStyles.css' rel='stylesheet' type='text/css'> -->   
 	<!-- jQuery from local file should only be used if you are not using the CDN reference -->   
 	<!-- <script src='../js/jquery-3.6.0.js' type='module'></script> -->   
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>   
-	<script src='https://www.unpkg.com/@panzoom/panzoom/dist/panzoom.js'></script>   
-	<!-- The custom scripts file should only be used if you move the contents of the scipts tag (from the bottom of the page) to it. -->   
-	<!-- <script src='../js/plateScripts.js' type='module'></script> -->  
-  
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
 
   <!-- New Below -->
+  <!-- Commented out because the OpenSeaDragon library is being used instead.      -->
+	<!-- <script src='https://www.unpkg.com/@panzoom/panzoom/dist/panzoom.js'></script> -->
+  <!-- New Above -->
+
+	<!-- The custom scripts file should only be used if you move the contents of the scipts tag (from the bottom of the page) to it. -->   
+	<!-- <script src='../js/plateScripts.js' type='module'></script> -->  
+
+  <!-- New Below -->
+  <!-- ToDo - Replace with CDN -->
   <script src="../openseadragon/openseadragon.min.js"></script>
+  <!-- ToDo - Replace with CDN once 'svg flip' has been added to the library -->
   <script src="../svg-overlay-master/openseadragon-svg-overlay.js"></script>
   <!-- <script src="../js/jquery-ui-1.13.1.custom/jquery-ui.js"></script> -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/ui-darkness/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-  
-  <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/black-tie/jquery-ui.css"></script> -->
-  <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
+  <!-- Questionable CDN link - Check with Devs to get the official one  -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js" integrity="sha512-Dq5iZeGNxm7Ql/Ix10sugr98niMRyuObKlIzKN1SzUysEXBxti479CTsCiTV00gFlDeDO3zhBsyCOO+v6QVwJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  -->
   
   <!-- New Above -->
@@ -3656,58 +3660,14 @@
 			panzoom.reset();   
 		});
 
-
-    // New Below
-    // Plate flipping logic for OpenSeadragon  
-		$('#plateFlipButton').click(function() {   
-      
-      //alert($("#svgImage").parent().parent().css());
-
-      // alert(overlay._node.attributes.transform.value);
-
-      // overlay._node.attributes.transform.value = "translate(-458,0) scale(-0.19) rotate(0)"
-      
-      //"translate(363,-121.75) scale(0.38000000000000006) rotate(0)"
-
-      // $("#svgImage").parent().parent({
-      //   '-webkit-transform' : 'scaleX(' + -1 + ')',
-      //   '-moz-transform'    : 'scaleX(' + -1 + ')',
-      //   '-ms-transform'     : 'scaleX(' + -1 + ')',
-      //   '-o-transform'      : 'scaleX(' + -1 + ')',
-      //   'transform'         : 'scaleX(' + -1 + ')'
-      // });
-
-      // $("#svgImage").parent().css({
-      //   '-webkit-transform' : 'scaleX(' + 1.2 + ')',
-      //   '-moz-transform'    : 'scaleX(' + 1.2 + ')',
-      //   '-ms-transform'     : 'scaleX(' + 1.2 + ')',
-      //   '-o-transform'      : 'scaleX(' + 1.2 + ')',
-      //   'transform'         : 'scaleX(' + 1.2 + ')'
-      // });
-
-      // $("#svgImage").css({
-      //   '-webkit-transform' : 'scaleX(-1)',
-      //   '-moz-transform'    : 'scaleX(-1)',
-      //   '-ms-transform'     : 'scaleX(-1)',
-      //   '-o-transform'      : 'scaleX(-1)',
-      //   'transform'         : 'scaleX(-1)'
-      // });
-      // $("#svgImage").css({
-      //   '-webkit-transform' : 'translateX(500)',
-      //   '-moz-transform'    : 'translateX(500)',
-      //   '-ms-transform'     : 'translateX(500)',
-      //   '-o-transform'      : 'translateX(500)',
-      //   'transform'         : 'translateX(500)',
-      // });
-
-    });
-    // New Above
-
 		// Plate flipping logic   
 		$('#plateFlipButton').click(function() {   
 
-			// Triggers a plate reset so that the flip animates   
-			panzoom.reset();   
+			// Triggers a plate reset so that the flip animates
+      // New Below
+      // Commented out because the OpenSeaDragon library is being used instead.   
+			//panzoom.reset();
+      // New Above   
 
 			// Does the flipping and highlights button   
 			if($('#svgWrapper').hasClass('plateflipped')) {   
@@ -3750,6 +3710,8 @@
 
 		});   
 
+    // New Below
+    // Commented out because the OpenSeaDragon library is being used instead.  
 		// panzoom library settings   
 		// const element = document.getElementById('svgWrapper');   
 		// const panzoom = Panzoom(element, {   
@@ -3772,33 +3734,33 @@
 		// 	}   
 		// });   
 
+    // Commented out because the OpenSeaDragon library is being used instead.  
 		// // enable mouse wheel   
 		// const parent = element.parentElement;   
 		// parent.addEventListener('wheel', panzoom.zoomWithWheel);
+    // New Above
     
     
-    // New Below
-
-    // Z.showImage("myContainer", "../assets/ZoomifyImageExample");  
+    // New Below 
 
     var viewer = OpenSeadragon({
-        id: "openSeaDragonWrapper",
-        prefixUrl: "../openseadragon/images/",
-        defaultZoomLevel: 0,
-        preload: true,
-        immediateRender: true,
-        homeButton: "plateResetPanZoomButton",
-        flipButton: "plateFlipButton",
-        showFlipControl: true,
-        showRotationControl: true,
-        showNavigator: true,
-        // Degrees set to != 0 to prevent bug -- Where while the tiled image is flipped, 
-        // if you zoom in beyond the max pixel ratio (maxZoomPixelRation) of 1.1, 
-        // the tiled image flips back to its original orientation.
-        degrees: .0000000001,
-        maxZoomPixelRatio: 4,
-        zoomPerScroll: 2,
-        tileSources: [
+      id: "openSeaDragonWrapper",
+      prefixUrl: "../openseadragon/images/",
+      defaultZoomLevel: 0,
+      preload: true,
+      immediateRender: true,
+      homeButton: "plateResetPanZoomButton",
+      flipButton: "plateFlipButton",
+      showFlipControl: true,
+      showRotationControl: true,
+      showNavigator: true,
+      // Degrees set to != 0 to prevent bug -- Where while the tiled image is flipped, 
+      // if you zoom in beyond the max pixel ratio (maxZoomPixelRation) of 1.1, 
+      // the tiled image flips back to its original orientation.
+      degrees: .000001,
+      maxZoomPixelRatio: 4,
+      zoomPerScroll: 2,
+      tileSources: [
         {
           width: 4000,
           tileSource: {
@@ -3807,7 +3769,7 @@
             width: 2048,
             height: 2048,
             tilesUrl:
-              "../assets/ZoomifyImageExample/",
+              "../assets/8.05-2048-Original_Images/11386/",
             //optional
             tileSize: 256,
             fileFormat: "jpg"
@@ -3816,11 +3778,7 @@
       ],
     });
 
-    var overlay = viewer.svgOverlay({
-      rotate: 45
-    })
-    
-    //overlay.node().parentNode.style.pointerEvents = 'none';
+    var overlay = viewer.svgOverlay();
     overlay.node().append(svgImage)
 
     new OpenSeadragon.MouseTracker({  
@@ -3837,27 +3795,29 @@
       }
     });
 
-      $("#slider").slider({
-        min: 0.000001,
-        max: 359.999999,
-        step: .000001
-      });
+    // jQuery UI slider scripts
+    $("#slider").slider({
+      // min and max values can not be 0 or 360 or an OpenSeadragon bug is triggered where the tile image flips when zooming in past a maxZoomPixelRation of 1.1
+      min: 0.000001,
+      max: 359.999999,
+      step: .000001
+    });
 
-      //This edits the size and placement of the slider handle.  Doing it in the styles doesn't seem to work.
-      $(".ui-slider-handle")
-        .height(30)
-        .width(70)
-        .css("margin-left", "-35px")
-        .css("margin-top", "3px")
-        .text("Rotate")
-        .css("color", "lightgray");
+    //This edits the size and placement of the slider handle.  Doing it in the styles doesn't seem to work.
+    $(".ui-slider-handle")
+      .height(30)
+      .width(70)
+      .css("margin-left", "-35px")
+      .css("margin-top", "3px")
+      .text("Rotate")
+      .css("color", "lightgray");
 
-      // Sets the rotation angle to the value of the slider
-      $("#slider").slider({slide: function(event, ui) {
-        viewer.viewport.setRotation(ui.value);
-        console.log("jQuery Script", ui.value)
-        }
-      });
+    // Sets the rotation angle of the SVG to that of the value of the slider
+    $("#slider").slider({slide: function(event, ui) {
+      viewer.viewport.setRotation(ui.value);
+      console.log("jQuery Script", ui.value)
+      }
+    });
 
   
     // New Above
