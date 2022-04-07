@@ -250,13 +250,13 @@
   *     the viewport height or width at which the zoom out will be constrained.
   *     Setting it to 0, for example will allow you to zoom out infinity.
   *
-  * @property {Number} [maxZoomPixelRatio=4.0]
+  * @property {Number} [maxZoomPixelRatio=1.1]
   *     The maximum ratio to allow a zoom-in to affect the highest level pixel
   *     ratio. This can be set to Infinity to allow 'infinite' zooming into the
   *     image though it is less effective visually if the HTML5 Canvas is not
   *     available on the viewing device.
   *
-  * @property {Number} [smoothTileEdgesMinZoom=4.0]
+  * @property {Number} [smoothTileEdgesMinZoom=1.1]
   *     A zoom percentage ( where 1 is 100% ) of the highest resolution level.
   *     When zoomed in beyond this value alternative compositing will be used to
   *     smooth out the edges between tiles. This will have a performance impact.
@@ -1212,8 +1212,8 @@ function OpenSeadragon( options ){
             autoHideControls:       true,
             immediateRender:        false,
             minZoomImageRatio:      0.9, //-> closer to 0 allows zoom out to infinity
-            maxZoomPixelRatio:      4.0, //-> higher allows 'over zoom' into pixels
-            smoothTileEdgesMinZoom: 4.0, //-> higher than maxZoomPixelRatio disables it
+            maxZoomPixelRatio:      1.1, //-> higher allows 'over zoom' into pixels
+            smoothTileEdgesMinZoom: 1.1, //-> higher than maxZoomPixelRatio disables it
             iOSDevice:              isIOSDevice(),
             pixelsPerWheelLine:     40,
             pixelsPerArrowPress:    40,
