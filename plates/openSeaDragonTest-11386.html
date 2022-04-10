@@ -26,7 +26,9 @@
 	<!-- <script src='../js/jquery-ui-1.13.1.custom/jquery-ui.js'></script> -->   
 	<link rel='stylesheet' href='//code.jquery.com/ui/1.13.1/themes/ui-darkness/jquery-ui.css'>   
 	<script src='https://code.jquery.com/ui/1.13.1/jquery-ui.js'></script>
-  <script src="jquery.ui.touch-punch.min.js"></script>   
+  <!-- Allows jQuery UI slider to work properly with touch -->
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <!-- <script src="jquery.ui.touch-punch.min.js"></script>    -->
 
 	<!-- Questionable CDN link - Check with Devs to get the official one -->   
 	<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js' integrity='sha512-Dq5iZeGNxm7Ql/Ix10sugr98niMRyuObKlIzKN1SzUysEXBxti479CTsCiTV00gFlDeDO3zhBsyCOO+v6QVwJw==' crossorigin='anonymous' referrerpolicy='no-referrer'></script> -->   
@@ -3804,8 +3806,9 @@
 				viewer.viewport.setRotation(ui.value);   
 				console.log('jQuery Script', ui.value)   
 			}   
-		}).draggable();   
+		});   
  
+    //$(".ui-slider-handle").draggable();
     
 	</script>   
 </body>   
