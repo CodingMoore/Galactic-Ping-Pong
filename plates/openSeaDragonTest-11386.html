@@ -20,7 +20,7 @@
 	<!-- <script src='../js/plateScripts.js' type='module'></script> -->   
 
 	<!-- ToDo - Replace with CDN -->   
-	<script src='../openseadragon/openseadragon.min.js'></script>   
+	<script src='../openseadragon/openseadragon.js'></script>   
 	<!-- ToDo - Replace with CDN once 'svg flip' has been added to the library -->   
 	<script src='../svg-overlay-master/openseadragon-svg-overlay.js'></script>   
 	<!-- <script src='../js/jquery-ui-1.13.1.custom/jquery-ui.js'></script> -->   
@@ -3746,7 +3746,8 @@
 			// Degrees set to != 0 to prevent bug -- Where while the tiled image is flipped,   
 			// if you zoom in beyond the max pixel ratio (maxZoomPixelRation) of 1.1,   
 			// the tiled image flips back to its original orientation.   
-			degrees: .000001,   
+			//degrees: .000001,   
+      degrees: 0,
 			maxZoomPixelRatio: 4,   
 			zoomPerScroll: 2,   
 			tileSources: [   
@@ -3787,7 +3788,8 @@
 		// jQuery UI slider scripts   
 		$('#slider').slider({   
 			// min and max values can not be 0 or 360 or an OpenSeadragon bug is triggered where the tile image flips when zooming in past a maxZoomPixelRation of 1.1   
-			min: 0.000001,   
+			//min: 0.000001,
+      min: 0,   
 			max: 359.999999,   
 			step: .000001   
 		});   
@@ -3804,7 +3806,6 @@
 		// Sets the rotation angle of the SVG to that of the value of the slider   
 		$('#slider').slider({slide: function(event, ui) {   
 				viewer.viewport.setRotation(ui.value);   
-				console.log('jQuery Script', ui.value)   
 			}   
 		});   
  

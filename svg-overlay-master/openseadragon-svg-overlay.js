@@ -89,39 +89,19 @@
             var rotation = this._viewer.viewport.getRotation();
             var flipped = this._viewer.viewport.getFlip();
             // TODO: Expose an accessor for _containerInnerSize in the OSD API so we don't have to use the private variable.
+            var scaleX = this._viewer.viewport._containerInnerSize.x * zoom;
+            var scaleY = this._viewer.viewport._containerInnerSize.x * zoom;
             
-            var scale = this._viewer.viewport._containerInnerSize.x * zoom;
-
             if(flipped){
-
-              // Translates svg back into the correct coordinates after the x scale is made negative.
-              p.x = -p.x + this._viewer.viewport._containerInnerSize.x;
-              // Makes the x component of the scale negative
-              this._node.setAttribute('transform',
-                  'translate(' + p.x + ',' + p.y + ') scale(' + -scale + ',' + scale + ') rotate(' + rotation + ')');
-              
-              console.log("rotation", rotation);
-
-            } else {
-              this._node.setAttribute('transform',
-                  'translate(' + p.x + ',' + p.y + ') scale(' + scale + ') rotate(' + rotation + ')');
-
-              console.log("rotation", rotation);
+                // Makes the x component of the scale negative to flip the svg
+                scaleX = -scaleX;
+                // Translates svg back into the correct coordinates when the x scale is made negative.
+                p.x = -p.x + this._viewer.viewport._containerInnerSize.x;
             }
+
+            this._node.setAttribute('transform',
+                'translate(' + p.x + ',' + p.y + ') scale(' + scaleX + ',' + scaleY + ') rotate(' + rotation + ')');
         },
-
-
-            // console.log("scale", scale);
-            // console.log("scale X", this._viewer.viewport._containerInnerSize.x * zoom);
-            // console.log("scale Y", this._viewer.viewport._containerInnerSize.y * zoom);
-            // console.log("zoom", zoom);
-            // console.log("InnerSize X", this._viewer.viewport._containerInnerSize.x);
-            // console.log("InnerSize Y", this._viewer.viewport._containerInnerSize.y);
-            // console.log("p", p);
-            // console.log("new p", p);
-            //console.log("scale", scale);
-            
-
         // ----------
         onClick: function(node, handler) {
             // TODO: Fast click for mobile browsers
