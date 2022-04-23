@@ -15,6 +15,8 @@ SDSS Plates are 31" diameter, 1/8" think aluminum disks, each with 640-1000 smal
 
 While in the art galleries, a visitor can use this webpage to find the specific SDSS Plate that is in front of them.  When it is selected, a new browser window will open, containing a touch-friendly, interactive representation of the plate.  The visitor can then pan and zoom around the digital version of the plate and select any of the 640-1000 holes (astronomical objects).  When any hole is selected, the visitor is taken to the SDSS website and presented with scientific data specific to that galaxy, star, or quasar.
 
+**For more information about how the interactive plate images are created, please see my "[PlateMaker](https://github.com/CodingMoore/PlateMaker)" app.**
+
 <br/>
 
 ## **Screenshots**
