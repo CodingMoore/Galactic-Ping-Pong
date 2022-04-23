@@ -34,11 +34,11 @@ While in the art galleries, a visitor can use this webpage to find the specific 
 <br/>
 
 ## **Installation Instructions**
-**Option 1** (Live Site)
+### **Option 1** (Live Site)
 To use the live (hosted) version of this project, simply follow this link.
 https://codingmoore.github.io/Galactic-Ping-Pong/
 
-**Option 2** (direct download)
+### **Option 2** (direct download)
 
 Copy and paste the following GitHub project link into your web browser's url bar and hit enter/return.
 
@@ -53,7 +53,7 @@ Open the unzipped folder/files using Visual Studio Code, or similar source code 
 Use your Source Code Editor to run the project locally. In Visual Studio Code, this is done by right clicking on the "index.html" file (found in the project's root directory) and then selecting "Open with Live Server".  The project should automatically open using your computer's default web browser.
 
 
-**Option 3** (via git console/terminal)
+### **Option 3** (via git console/terminal)
 
 Open your Git enabled terminal/console and navigate to a directory that you wish to download this project to.
 
