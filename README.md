@@ -62,7 +62,11 @@ Type the following line of code into your terminal/console to automatically down
 git clone https://github.com/CodingMoore/Galactic-Ping-Pong
 ```
 
-Once the project has finished downloading, navigate to the root directory of the project in the terminal/console, and type "code ." and then hit return/enter.
+Once the project has finished downloading, navigate to the root directory of the project in the terminal/console, and type...
+```
+code .
+```
+...and then hit return/enter.
 
 The project should automatically launch using your default source code editor.
 
